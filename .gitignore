@@ -12,10 +12,11 @@ data/*.zip
 data/*.db
 !data/.gitkeep
 
-# Generated site data EXCEPT the small committed sample (so the demo renders)
+# Generated site data EXCEPT the small committed samples (so the demo renders)
 web/data/*.json
 !web/data/sample.employers.json
 !web/data/sample.index.json
+!web/data/sample.jobs.json
 
 # Env / editor / OS
 .env

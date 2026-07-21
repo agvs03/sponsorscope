@@ -3,40 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SponsorScope — U.S. visa sponsorship intelligence</title>
-  <meta name="description" content="Which U.S. employers actually sponsor H-1B visas — filing volume, certified rate, approval trend, and salary ranges, from public DOL & USCIS data." />
+  <title>SponsorPilot — sponsor-friendly job hunting, end to end</title>
+  <meta name="description" content="Build your resume, find jobs at U.S. employers that actually sponsor visas, see your fit, and draft your application — all in one place." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <h1>Sponsor<span>Scope</span></h1>
-      <p class="tagline">Which U.S. employers <em>actually</em> sponsor — from public government data, not guesswork.</p>
+    <div class="wrap header-row">
+      <div class="brand">
+        <h1>Sponsor<span>Pilot</span></h1>
+        <p class="tagline">Build a resume · find jobs that <em>actually sponsor</em> · apply smarter.</p>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-view="jobs">Find Jobs</button>
+        <button class="tab" data-view="resume">Resume Builder</button>
+        <button class="tab" data-view="tracker">My Tracker <span id="trackerCount" class="pill">0</span></button>
+      </nav>
     </div>
   </header>
 
   <div id="demoBanner" class="demo-banner" hidden>
-    ⚠ Showing <strong>sample/demo data</strong> — these are fabricated figures for illustration, not real sponsorship numbers. Build with real DOL/USCIS data to go live (see README).
+    ⚠ Showing <strong>sample job data</strong> for demonstration. Connect real company job boards to go live (see README).
   </div>
 
   <main class="wrap">
-    <section class="search">
-      <input id="q" type="search" placeholder="Search an employer (e.g. Globex, Initech)…" autocomplete="off" aria-label="Search employer" />
-      <p id="meta" class="meta"></p>
+    <!-- ============================ FIND JOBS ============================ -->
+    <section id="view-jobs" class="view">
+      <div class="filters">
+        <input id="q" type="search" placeholder="Role or keyword (e.g. data analyst, backend, ML)…" aria-label="Role or keyword" />
+        <input id="loc" type="search" placeholder="Location (e.g. CA, remote)…" aria-label="Location" />
+        <label class="toggle"><input type="checkbox" id="sponsorsOnly" checked /> Sponsors only</label>
+      </div>
+      <p id="jobsMeta" class="meta"></p>
+      <div id="jobList" class="cards" aria-live="polite"></div>
     </section>
 
-    <section id="results" class="results" aria-live="polite"></section>
+    <!-- ========================== RESUME BUILDER ======================== -->
+    <section id="view-resume" class="view" hidden>
+      <div class="resume-grid">
+        <form id="resumeForm" class="resume-form" autocomplete="on">
+          <h2>Your details</h2>
+          <div class="field-row">
+            <label>Full name <input name="name" placeholder="Jordan Lee" /></label>
+            <label>Email <input name="email" type="email" placeholder="jordan@email.com" /></label>
+          </div>
+          <div class="field-row">
+            <label>Phone <input name="phone" placeholder="(555) 123-4567" /></label>
+            <label>Location <input name="location" placeholder="San Jose, CA" /></label>
+          </div>
+          <label>LinkedIn / portfolio <input name="linkedin" placeholder="linkedin.com/in/…" /></label>
+          <label>Professional summary
+            <textarea name="summary" rows="3" placeholder="One or two lines on who you are and what you're targeting."></textarea>
+          </label>
+          <label>Skills <small>(comma-separated)</small>
+            <input name="skills" placeholder="Python, SQL, TensorFlow, FastAPI, Docker" />
+          </label>
 
-    <section id="profile" class="profile" hidden></section>
+          <h3>Experience</h3>
+          <div id="expList"></div>
+          <button type="button" class="ghost" id="addExp">+ Add experience</button>
+
+          <h3>Education</h3>
+          <div id="eduList"></div>
+          <button type="button" class="ghost" id="addEdu">+ Add education</button>
+
+          <div class="form-actions">
+            <button type="button" class="primary" id="saveResume">Save</button>
+            <button type="button" class="ghost" id="printResume">Download / Print</button>
+            <span id="resumeSaved" class="saved-note"></span>
+          </div>
+        </form>
+        <div class="resume-preview" id="resumePreview" aria-label="Resume preview"></div>
+      </div>
+    </section>
+
+    <!-- ============================= TRACKER =========================== -->
+    <section id="view-tracker" class="view" hidden>
+      <h2>My applications</h2>
+      <p class="meta">Everything you save is stored in your browser only — private to you.</p>
+      <div id="trackerList" class="cards"></div>
+    </section>
   </main>
+
+  <!-- Job detail drawer -->
+  <div id="drawer" class="drawer" hidden>
+    <div class="drawer-panel" id="drawerPanel"></div>
+    <div class="drawer-scrim" id="drawerScrim"></div>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p id="dataNote"></p>
       <p class="disclaimer">
-        <strong>Not legal or immigration advice.</strong> Historical sponsorship is not a guarantee for any future role.
-        Wages reflect offered wages on visa filings and can skew toward the prevailing-wage floor.
-        Sources: public DOL OFLC LCA disclosures &amp; USCIS H-1B Employer Data Hub.
+        <strong>Not legal or immigration advice.</strong> Sponsorship signals come from public DOL OFLC LCA &amp; USCIS
+        H-1B Employer Data Hub disclosures; historical sponsorship is not a guarantee for any future role. Fit scores are a
+        keyword-overlap guide, not a prediction. Jobs are pulled from employers' own public career-board APIs.
       </p>
     </div>
   </footer>

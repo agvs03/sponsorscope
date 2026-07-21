@@ -1,105 +1,83 @@
-# SponsorScope
+# SponsorPilot
 
-**Which U.S. employers actually sponsor visas — from public government data, not guesswork.**
+**End-to-end job hunting for people who need visa sponsorship.**
 
-SponsorScope turns free, public-domain U.S. Department of Labor and USCIS
-disclosure data into a searchable per-employer profile: how many H-1B filings a
-company makes, its certified rate, whether sponsorship is **rising or declining**,
-its USCIS approval rate, and the **offered-wage range** for the roles it sponsors.
-It's a static website anyone can visit — no login, no scraping, no server bills.
+Build your resume, search **real jobs at U.S. employers that actually sponsor**,
+see your fit to each role, get a tailored application draft, and track it all —
+in one free site, no login. Sponsorship signals come from public government
+disclosure data; jobs come from employers' own public career-board APIs.
 
-> **Honest scope.** This is an aggregation of public disclosure data, not a
-> predictor of your personal chances. Historical sponsorship is **not** a
-> guarantee for any future role. It is **not** legal or immigration advice.
+> **Honest scope.** Sponsorship history is public fact, not a promise for any
+> future role. Fit scores are a keyword-overlap guide, not a prediction. It is
+> **not** legal or immigration advice. Drafts are yours to review and send —
+> the app never sends anything on your behalf.
 
 ---
 
-## Why this exists
+## What it does (end to end)
 
-International students burn applications on companies that don't sponsor. The
-raw answer is buried in giant government spreadsheets. SponsorScope makes it
-searchable and adds the signal that matters most — **the trend** (a company
-whose sponsorship is declining is a very different bet from one ramping up).
+1. **Resume Builder** — a clean, ATS-friendly resume in the browser. Live
+   preview, one-click print/PDF, saved locally (never uploaded).
+2. **Find Jobs** — search any role/location; results are **filtered to employers
+   with sponsorship history** and ranked by your resume fit + sponsorship
+   strength (rising / steady / declining).
+3. **Fit + Draft** — each job shows your skill match, the company's sponsorship
+   track record, typical wage, and a **tailored application note you edit and
+   send yourself**.
+4. **Tracker** — save jobs and move them through Saved → Applied → Interviewing →
+   Offer, stored privately in your browser.
 
 ## What's real vs. what isn't (by design)
 
-This project only ships numbers it can source honestly:
-
 | Feature | Status | Basis |
 |---|---|---|
-| Sponsorship volume, certified %, **trend** | ✅ Real | DOL LCA disclosures (a transparent aggregation) |
-| USCIS approval rate | ✅ Real | USCIS H-1B Employer Data Hub |
-| Offered-wage range | ✅ Real | DOL LCA offered wages (skews toward the prevailing-wage floor — disclosed in-app) |
-| "Interview probability" | ❌ **Not built** | No public ground-truth data exists — any such number would be fabricated |
-| Recruiter scraping / auto-outreach | ❌ **Not built** | Scraping LinkedIn/etc. and mass cold-email are ToS/CAN-SPAM/GDPR violations |
-
-## Data sources (all free, public domain — 17 U.S.C. §105)
-
-- **DOL OFLC LCA Disclosure Data** — <https://www.dol.gov/agencies/eta/foreign-labor/performance>
-- **USCIS H-1B Employer Data Hub** — <https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub>
-
-Nothing is scraped. Run `python -m pipeline.sources` to print the exact files to download.
-
----
+| Sponsorship history, trend, approval rate, wages | ✅ Real | Public DOL LCA + USCIS Employer Data Hub |
+| Job listings | ✅ Real | Employers' official ATS APIs (Greenhouse/Lever/Ashby) — **no scraping** |
+| Resume ↔ job fit | ✅ Honest heuristic | Transparent keyword overlap, labeled as a guide |
+| Application drafts | ✅ You send them | Generated draft; **never auto-sent** (auto-emailing recruiters is illegal spam) |
+| "Interview probability" | ❌ Not built | No public ground-truth data exists — it would be fabricated |
+| Recruiter scraping / auto-outreach | ❌ Not built | ToS / CAN-SPAM / GDPR violations |
 
 ## Architecture
 
 ```
-DOL LCA .xlsx  ┐
-               ├─►  pipeline/build.py  ─►  data/sponsorscope.db (SQLite, full)
-USCIS Hub .csv ┘        (normalize,          web/data/employers.json  ┐
-                         join, aggregate)     web/data/index.json      ├─► static site
-                                                                       ┘   (web/)
+DOL LCA + USCIS ┐                         ┌─ web/data/employers.json (sponsorship)
+                ├─► pipeline/build.py ─────┤
+ATS job boards ─┘   pipeline/jobs.py       └─ web/data/jobs.json (sponsor-friendly jobs)
+  (Greenhouse/Lever/Ashby, official APIs)                   │
+                                                            ▼
+                              web/  — static client-side app (resume + search +
+                                       fit + tracker). No backend, no login,
+                                       free on GitHub Pages.
 ```
 
-- **`pipeline/`** — ingest → normalize employer names → aggregate → export.
-- **`web/`** — a dependency-free static site that reads the exported JSON entirely client-side. Deploys to GitHub Pages for free.
-- **`api/`** — *optional* FastAPI over the SQLite DB, for when the employer set is too big to ship as static JSON.
+The whole app is client-side: the resume and tracker live in your browser
+(`localStorage`), and the job/sponsorship data is pre-built JSON. That's why it
+hosts free and works for anyone with just a URL.
+
+## Data sources (free, public domain — 17 U.S.C. §105)
+
+- **DOL OFLC LCA Disclosure Data** — <https://www.dol.gov/agencies/eta/foreign-labor/performance>
+- **USCIS H-1B Employer Data Hub** — <https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub>
+- **Jobs** — employers' public ATS boards (Greenhouse/Lever/Ashby). Run `python -m pipeline.sources` for details.
 
 ## Quick start (no downloads)
 
 ```bash
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-# Generate synthetic data + build the site (metrics are fake, wiring is real)
-python scripts/build_sample_site.py
-
-# Serve it
-python -m http.server -d web 8080     # open http://localhost:8080
+python scripts/build_sample_site.py     # build sponsorship data from synthetic input
+python -m http.server -d web 8080       # open http://localhost:8080
 ```
 
-The sample site shows a visible **"demo data"** banner so it can never be mistaken for real figures.
+The site ships with sample jobs + a visible **"sample data"** banner so nothing
+is mistaken for real figures until you connect real sources.
 
-## Going live with real data
+## Roadmap
 
-```bash
-# 1. Download the two files (see links above) into data/:
-#      data/lca.xlsx        (DOL LCA disclosure)
-#      data/uscis_hub.csv   (USCIS Employer Data Hub)
-python -m pipeline.sources          # prints exactly what to download
-
-# 2. Build real profiles
-python -m pipeline.build
-
-# 3. Commit the built site data so GitHub Pages serves it (it's git-ignored by default)
-git add -f web/data/employers.json web/data/index.json
-git commit -m "Refresh sponsorship data (<quarter>)"
-git push
-```
-
-The `deploy.yml` workflow publishes `web/` to GitHub Pages on every push. Enable
-Pages once under **Settings → Pages → Source: GitHub Actions**.
-
-## The "living data" reality — read this
-
-The auto-refresh honesty: **DOL/USCIS release new files on their own schedule
-(roughly quarterly), in formats that occasionally change.** So the refresh is a
-**periodic re-run**, not a magic 6-hour cron — re-download, `python -m
-pipeline.build`, commit. `pipeline/build.py` already handles common column-name
-variations across years, but a new DOL schema may need a tweak to `LCA_ALIASES`.
-Automating the download fully requires a stable direct URL, which DOL doesn't
-reliably provide — that's a deliberate future enhancement, not a shipped promise.
+- [x] Resume builder, sponsor-filtered job search, fit scoring, drafts, tracker (this MVP)
+- [ ] `pipeline/jobs.py` — live ingestion of sponsoring companies' ATS boards into `web/data/jobs.json`
+- [ ] Optional **AI layer** (Claude API): resume-tailored bullets + smarter fit explanations
+- [ ] Saved-search **agent**: notify you when new sponsor-friendly jobs match
 
 ## Tests & CI
 
@@ -107,10 +85,9 @@ reliably provide — that's a deliberate future enhancement, not a shipped promi
 pytest
 ```
 
-`ci.yml` builds the site from synthetic data and runs the tests on every push —
-proving the whole pipeline works end-to-end on a clean machine.
+`ci.yml` builds the sponsorship data from synthetic input and runs the tests on
+every push. `deploy.yml` publishes `web/` to GitHub Pages.
 
 ## License
 
-MIT (see `LICENSE`). The government data is public domain; this project's code
-is yours to use. Employer names are used as factual public-record references.
+MIT. Government data is public domain; employer names are factual public-record references.
