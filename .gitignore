@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw government downloads — large; fetched by the pipeline, not committed
+data/*.xlsx
+data/*.csv
+data/*.zip
+data/*.db
+!data/.gitkeep
+
+# Generated site data EXCEPT the small committed sample (so the demo renders)
+web/data/*.json
+!web/data/sample.employers.json
+!web/data/sample.index.json
+
+# Env / editor / OS
+.env
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,32 @@
+# =============================================================================
+# SponsorScope configuration.
+# The pipeline reads free, public-domain U.S. government disclosure data and
+# builds a per-employer sponsorship + salary profile that the static site
+# consumes. Nothing here is scraped; every source is an official bulk download.
+# =============================================================================
+
+data:
+  # DOL OFLC LCA (H-1B/H-1B1/E-3) disclosure file — .xlsx or .csv.
+  # Download: https://www.dol.gov/agencies/eta/foreign-labor/performance
+  lca_path: "data/lca.csv"
+  # USCIS H-1B Employer Data Hub export — .csv.
+  # Download: https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub
+  uscis_path: "data/uscis_hub.csv"
+
+build:
+  # Only publish employers with at least this many LCA cases — keeps the static
+  # dataset small/fast and focuses on employers that genuinely sponsor.
+  min_petitions: 5
+  # LCA visa classes to include.
+  visa_classes: ["H-1B", "H-1B1 Chile", "H-1B1 Singapore", "E-3 Australian"]
+  # How many recent years of trend to compute.
+  trend_years: 5
+
+paths:
+  db: "data/sponsorscope.db"          # SQLite (full dataset, for the optional API)
+  web_data: "web/data"                # exported JSON the static site loads
+
+site:
+  title: "SponsorScope"
+  # Shown in the site footer / About. Keep the disclaimers honest.
+  data_note: "Built from public DOL OFLC LCA and USCIS H-1B Employer Data Hub disclosures. Historical sponsorship is not a guarantee for any future role. Data lags ~1 quarter."

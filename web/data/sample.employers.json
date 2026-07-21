@@ -1,0 +1,50 @@
+{
+  "globex-systems": {
+    "slug": "globex-systems", "name": "Globex Systems Inc",
+    "lca": {"total": 412, "certified": 376, "certified_pct": 91.3, "by_year": {"2020": 60, "2021": 72, "2022": 84, "2023": 90, "2024": 106}, "trend": "up"},
+    "wages": {"median_annual": 148000, "p25_annual": 128000, "p75_annual": 172000},
+    "uscis": {"initial_approval": 361, "initial_denial": 19, "approval_rate": 0.95},
+    "top_titles": [{"title": "Software Engineer", "count": 121}, {"title": "Senior Software Engineer", "count": 88}, {"title": "Data Scientist", "count": 64}, {"title": "Machine Learning Engineer", "count": 47}, {"title": "Data Engineer", "count": 39}],
+    "top_states": [{"state": "CA", "count": 190}, {"state": "WA", "count": 71}, {"state": "NY", "count": 58}, {"state": "TX", "count": 44}, {"state": "MA", "count": 30}]
+  },
+  "initech-software": {
+    "slug": "initech-software", "name": "Initech Software LLC",
+    "lca": {"total": 288, "certified": 252, "certified_pct": 87.5, "by_year": {"2020": 78, "2021": 70, "2022": 58, "2023": 46, "2024": 36}, "trend": "down"},
+    "wages": {"median_annual": 121000, "p25_annual": 104000, "p75_annual": 139000},
+    "uscis": {"initial_approval": 233, "initial_denial": 28, "approval_rate": 0.893},
+    "top_titles": [{"title": "Systems Analyst", "count": 96}, {"title": "Software Engineer", "count": 74}, {"title": "DevOps Engineer", "count": 41}, {"title": "Data Engineer", "count": 33}, {"title": "Product Manager", "count": 18}],
+    "top_states": [{"state": "TX", "count": 110}, {"state": "IL", "count": 60}, {"state": "GA", "count": 44}, {"state": "NC", "count": 40}, {"state": "NJ", "count": 34}]
+  },
+  "hooli": {
+    "slug": "hooli", "name": "Hooli Inc",
+    "lca": {"total": 604, "certified": 562, "certified_pct": 93.0, "by_year": {"2020": 95, "2021": 108, "2022": 120, "2023": 130, "2024": 151}, "trend": "up"},
+    "wages": {"median_annual": 165000, "p25_annual": 142000, "p75_annual": 195000},
+    "uscis": {"initial_approval": 548, "initial_denial": 14, "approval_rate": 0.975},
+    "top_titles": [{"title": "Software Engineer", "count": 201}, {"title": "Machine Learning Engineer", "count": 96}, {"title": "Senior Software Engineer", "count": 92}, {"title": "Data Scientist", "count": 78}, {"title": "Data Engineer", "count": 51}],
+    "top_states": [{"state": "CA", "count": 320}, {"state": "WA", "count": 110}, {"state": "NY", "count": 84}, {"state": "MA", "count": 50}, {"state": "VA", "count": 40}]
+  },
+  "stark-industries": {
+    "slug": "stark-industries", "name": "Stark Industries",
+    "lca": {"total": 156, "certified": 138, "certified_pct": 88.5, "by_year": {"2020": 30, "2021": 32, "2022": 31, "2023": 30, "2024": 33}, "trend": "flat"},
+    "wages": {"median_annual": 158000, "p25_annual": 135000, "p75_annual": 184000},
+    "uscis": {"initial_approval": 130, "initial_denial": 10, "approval_rate": 0.929},
+    "top_titles": [{"title": "Software Engineer", "count": 52}, {"title": "Data Scientist", "count": 40}, {"title": "DevOps Engineer", "count": 28}, {"title": "Senior Software Engineer", "count": 22}, {"title": "Systems Analyst", "count": 14}],
+    "top_states": [{"state": "CA", "count": 70}, {"state": "NY", "count": 34}, {"state": "MA", "count": 24}, {"state": "WA", "count": 18}, {"state": "NJ", "count": 10}]
+  },
+  "massive-dynamic": {
+    "slug": "massive-dynamic", "name": "Massive Dynamic",
+    "lca": {"total": 97, "certified": 82, "certified_pct": 84.5, "by_year": {"2020": 28, "2021": 24, "2022": 20, "2023": 15, "2024": 10}, "trend": "down"},
+    "wages": {"median_annual": 112000, "p25_annual": 98000, "p75_annual": 128000},
+    "uscis": {"initial_approval": 74, "initial_denial": 13, "approval_rate": 0.851},
+    "top_titles": [{"title": "Systems Analyst", "count": 38}, {"title": "Software Engineer", "count": 29}, {"title": "Data Engineer", "count": 16}, {"title": "DevOps Engineer", "count": 9}, {"title": "Product Manager", "count": 5}],
+    "top_states": [{"state": "NJ", "count": 40}, {"state": "IL", "count": 22}, {"state": "TX", "count": 18}, {"state": "GA", "count": 11}, {"state": "NC", "count": 6}]
+  },
+  "pied-piper": {
+    "slug": "pied-piper", "name": "Pied Piper Inc",
+    "lca": {"total": 41, "certified": 37, "certified_pct": 90.2, "by_year": {"2020": 4, "2021": 6, "2022": 8, "2023": 10, "2024": 13}, "trend": "up"},
+    "wages": {"median_annual": 155000, "p25_annual": 138000, "p75_annual": 178000},
+    "uscis": {"initial_approval": 35, "initial_denial": 2, "approval_rate": 0.946},
+    "top_titles": [{"title": "Machine Learning Engineer", "count": 15}, {"title": "Software Engineer", "count": 12}, {"title": "Data Scientist", "count": 8}, {"title": "Senior Software Engineer", "count": 4}, {"title": "Data Engineer", "count": 2}],
+    "top_states": [{"state": "CA", "count": 28}, {"state": "WA", "count": 7}, {"state": "NY", "count": 4}, {"state": "MA", "count": 2}]
+  }
+}

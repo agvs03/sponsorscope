@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SponsorScope — U.S. visa sponsorship intelligence</title>
+  <meta name="description" content="Which U.S. employers actually sponsor H-1B visas — filing volume, certified rate, approval trend, and salary ranges, from public DOL & USCIS data." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Sponsor<span>Scope</span></h1>
+      <p class="tagline">Which U.S. employers <em>actually</em> sponsor — from public government data, not guesswork.</p>
+    </div>
+  </header>
+
+  <div id="demoBanner" class="demo-banner" hidden>
+    ⚠ Showing <strong>sample/demo data</strong> — these are fabricated figures for illustration, not real sponsorship numbers. Build with real DOL/USCIS data to go live (see README).
+  </div>
+
+  <main class="wrap">
+    <section class="search">
+      <input id="q" type="search" placeholder="Search an employer (e.g. Globex, Initech)…" autocomplete="off" aria-label="Search employer" />
+      <p id="meta" class="meta"></p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <section id="profile" class="profile" hidden></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="dataNote"></p>
+      <p class="disclaimer">
+        <strong>Not legal or immigration advice.</strong> Historical sponsorship is not a guarantee for any future role.
+        Wages reflect offered wages on visa filings and can skew toward the prevailing-wage floor.
+        Sources: public DOL OFLC LCA disclosures &amp; USCIS H-1B Employer Data Hub.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
