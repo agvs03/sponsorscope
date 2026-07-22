@@ -102,6 +102,19 @@ input, textarea, select { font: inherit; color: var(--text); }
 .miss { color: var(--down); } .have { color: var(--up); }
 .close-x { float: right; background: none; border: none; font-size: 1.4rem; color: var(--muted); }
 
+/* AI settings modal */
+.modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; }
+.modal-scrim { position: absolute; inset: 0; background: rgba(10,15,25,.5); }
+.modal-panel { position: relative; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 14px; box-shadow: var(--shadow); padding: 24px; width: min(480px, 92vw); }
+.modal-panel h2 { margin: 0 0 6px; }
+.modal-panel label { display: block; margin: 12px 0 4px; font-size: .82rem; color: var(--muted); }
+.modal-panel input, .modal-panel select { width: 100%; padding: 9px 11px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 9px; }
+.modal-panel a { color: var(--accent); }
+.ai-out { background: color-mix(in srgb, var(--accent) 8%, var(--card)); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px; margin-top: 10px; white-space: pre-wrap; font-size: .9rem; }
+
 /* Banner + footer */
 .demo-banner { background: color-mix(in srgb, var(--flat) 18%, var(--card)); border-bottom: 1px solid var(--border);
   text-align: center; padding: 9px 20px; font-size: .86rem; }

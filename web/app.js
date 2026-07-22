@@ -19,10 +19,35 @@ async function boot() {
   JOBS = await loadJobs();
   if (USING_SAMPLE) $("#demoBanner").hidden = false;
   setupTabs();
+  setupSettings();
   setupResume();
   setupJobs();
   renderTracker();
   renderJobs();
+}
+
+/* ------------------------------ AI settings ---------------------------- */
+function setupSettings() {
+  const modal = $("#settings");
+  const open = () => {
+    $("#aiKey").value = window.SponsorPilotAI?.getKey() || "";
+    $("#aiModel").value = window.SponsorPilotAI?.getModel() || "claude-opus-4-8";
+    modal.hidden = false;
+  };
+  const close = () => (modal.hidden = true);
+  $("#settingsBtn").addEventListener("click", open);
+  $("#settingsClose").addEventListener("click", close);
+  $("#settingsScrim").addEventListener("click", close);
+  $("#aiSave").addEventListener("click", () => {
+    window.SponsorPilotAI.setKey($("#aiKey").value);
+    window.SponsorPilotAI.setModel($("#aiModel").value);
+    const n = $("#aiSaved"); n.textContent = "✓ Saved"; setTimeout(() => (n.textContent = ""), 2000);
+  });
+  $("#aiClear").addEventListener("click", () => {
+    window.SponsorPilotAI.setKey("");
+    $("#aiKey").value = "";
+    const n = $("#aiSaved"); n.textContent = "removed"; setTimeout(() => (n.textContent = ""), 2000);
+  });
 }
 
 function setupTabs() {
@@ -224,6 +249,11 @@ function openDrawer(id) {
        ${f.score == null ? "Add skills to your resume to see your fit." : ""}</p>
     <h4>Draft application note <small>(edit before sending — you send it, we don't)</small></h4>
     <div class="draft" id="draftText">${esc(draftNote(r, j, f))}</div>
+    <div class="row-actions" style="margin-top:8px">
+      <button class="ghost" id="aiTailor">✨ Tailor with AI</button>
+      <button class="ghost" id="aiExplain">✨ Explain my fit</button>
+    </div>
+    <div id="aiOut" class="ai-out" hidden></div>
     <div class="row-actions">
       <button class="primary" id="copyDraft">Copy draft</button>
       <a class="ghost link-btn" href="${esc(j.url || "#")}" target="_blank" rel="noopener">Open application ↗</a>
@@ -233,6 +263,30 @@ function openDrawer(id) {
   $("#closeDrawer").onclick = $("#drawerScrim").onclick = closeDrawer;
   $("#copyDraft").onclick = () => navigator.clipboard?.writeText($("#draftText").textContent);
   $("#saveJob").onclick = () => { track(j); openDrawer(id); renderTracker(); };
+
+  const aiOut = $("#aiOut");
+  const aiReady = () => {
+    if (window.SponsorPilotAI?.hasKey()) return true;
+    aiOut.hidden = false;
+    aiOut.textContent = "Add your Anthropic API key in the ⚙ AI menu (top right) to enable AI features.";
+    return false;
+  };
+  $("#aiTailor").onclick = async () => {
+    if (!aiReady()) return;
+    aiOut.hidden = false; aiOut.textContent = "Tailoring your note with Claude…";
+    try {
+      const text = await window.SponsorPilotAI.tailorDraft({ resume: r, job: j, fit: f });
+      $("#draftText").textContent = text;
+      aiOut.textContent = "✓ Draft rewritten by Claude — review and edit before sending.";
+    } catch (e) { aiOut.textContent = "AI error: " + e.message; }
+  };
+  $("#aiExplain").onclick = async () => {
+    if (!aiReady()) return;
+    aiOut.hidden = false; aiOut.textContent = "Analyzing your fit with Claude…";
+    try {
+      aiOut.textContent = await window.SponsorPilotAI.explainFit({ resume: r, job: j, fit: f });
+    } catch (e) { aiOut.textContent = "AI error: " + e.message; }
+  };
 }
 function closeDrawer() { $("#drawer").hidden = true; }
 

@@ -18,6 +18,7 @@
         <button class="tab active" data-view="jobs">Find Jobs</button>
         <button class="tab" data-view="resume">Resume Builder</button>
         <button class="tab" data-view="tracker">My Tracker <span id="trackerCount" class="pill">0</span></button>
+        <button class="tab" id="settingsBtn" title="AI settings">⚙ AI</button>
       </nav>
     </div>
   </header>
@@ -85,6 +86,40 @@
     </section>
   </main>
 
+  <!-- AI settings modal -->
+  <div id="settings" class="modal" hidden>
+    <div class="modal-scrim" id="settingsScrim"></div>
+    <div class="modal-panel">
+      <button class="close-x" id="settingsClose">×</button>
+      <h2>Optional AI features</h2>
+      <p class="meta">
+        SponsorPilot works fully without this. To let <strong>Claude</strong> tailor your
+        application drafts and explain your fit, paste <em>your own</em> Anthropic API key.
+      </p>
+      <label>Anthropic API key
+        <input id="aiKey" type="password" placeholder="sk-ant-..." autocomplete="off" />
+      </label>
+      <label>Model
+        <select id="aiModel">
+          <option value="claude-opus-4-8">Claude Opus 4.8 (best)</option>
+          <option value="claude-sonnet-5">Claude Sonnet 5 (cheaper)</option>
+          <option value="claude-haiku-4-5">Claude Haiku 4.5 (cheapest)</option>
+        </select>
+      </label>
+      <div class="row-actions">
+        <button class="primary" id="aiSave">Save</button>
+        <button class="ghost" id="aiClear">Remove key</button>
+        <span id="aiSaved" class="saved-note"></span>
+      </div>
+      <p class="meta" style="margin-top:14px">
+        🔒 Your key is stored <strong>only in this browser</strong> (localStorage) and sent
+        <strong>only</strong> to api.anthropic.com for your own requests — never to us or anyone else.
+        You pay Anthropic for your usage. Get a key at
+        <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>.
+      </p>
+    </div>
+  </div>
+
   <!-- Job detail drawer -->
   <div id="drawer" class="drawer" hidden>
     <div class="drawer-panel" id="drawerPanel"></div>
@@ -101,6 +136,7 @@
     </div>
   </footer>
 
+  <script src="ai.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

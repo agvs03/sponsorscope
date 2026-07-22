@@ -3,6 +3,7 @@ pandas==2.2.2
 numpy==1.26.4
 openpyxl==3.1.5          # read DOL .xlsx disclosure files
 pyyaml==6.0.1
+requests==2.32.3        # fetch live jobs from ATS boards (pipeline/jobs.py)
 
 # Optional API backend (full-dataset serving; the static site does not need it)
 fastapi==0.111.1

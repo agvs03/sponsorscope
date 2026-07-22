@@ -75,9 +75,27 @@ is mistaken for real figures until you connect real sources.
 ## Roadmap
 
 - [x] Resume builder, sponsor-filtered job search, fit scoring, drafts, tracker (this MVP)
-- [ ] `pipeline/jobs.py` — live ingestion of sponsoring companies' ATS boards into `web/data/jobs.json`
-- [ ] Optional **AI layer** (Claude API): resume-tailored bullets + smarter fit explanations
+- [x] `pipeline/jobs.py` — live ingestion of sponsoring companies' ATS boards (Greenhouse/Lever/Ashby) into `web/data/jobs.json` (seed list in `pipeline/companies.yaml`)
+- [x] Optional **AI layer** (Claude API, bring-your-own-key): resume-tailored drafts + honest fit explanations (⚙ AI menu)
 - [ ] Saved-search **agent**: notify you when new sponsor-friendly jobs match
+- [ ] Auto-run `pipeline/jobs.py` in the deploy workflow so the live site shows real jobs
+
+### Using the AI features
+
+The site works fully without AI. To enable Claude-powered draft tailoring and fit
+explanations, open the **⚙ AI** menu and paste your own
+[Anthropic API key](https://console.anthropic.com/settings/keys). It's stored only in
+your browser and used only for your own calls (you pay Anthropic for usage) — nothing
+is sent to us. This keeps the site free to host with no shared API costs.
+
+### Fetching real jobs
+
+```bash
+pip install -r requirements.txt
+python -m pipeline.jobs        # pulls live roles from pipeline/companies.yaml's ATS boards
+```
+This writes `web/data/jobs.json`, which the site loads in preference to the bundled
+sample. Grow `pipeline/companies.yaml` with more sponsoring companies + their ATS slugs.
 
 ## Tests & CI
 

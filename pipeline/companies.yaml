@@ -1,0 +1,39 @@
+# Seed list of sponsoring companies to aggregate jobs from, via their OFFICIAL
+# public ATS board APIs (no scraping). Grow this over time — ideally by joining
+# the H-1B sponsor list (build.py output) with each company's ATS token.
+#
+# ats:   greenhouse | lever | ashby
+# token: the company's board slug on that ATS. Find it from the company's
+#        careers page URL, e.g.:
+#          boards.greenhouse.io/<token>          -> greenhouse
+#          jobs.lever.co/<token>                 -> lever
+#          jobs.ashbyhq.com/<token>              -> ashby
+#
+# NOTE: the tokens below are ILLUSTRATIVE examples of well-known public boards.
+# Verify each is correct/live before relying on it; some companies move ATS.
+
+companies:
+  - name: Stripe
+    ats: greenhouse
+    token: stripe
+  - name: Databricks
+    ats: greenhouse
+    token: databricks
+  - name: Airbnb
+    ats: greenhouse
+    token: airbnb
+  - name: Figma
+    ats: greenhouse
+    token: figma
+  - name: Netflix
+    ats: lever
+    token: netflix
+  - name: Ramp
+    ats: ashby
+    token: ramp
+  - name: Notion
+    ats: greenhouse
+    token: notion
+  - name: Plaid
+    ats: lever
+    token: plaid
