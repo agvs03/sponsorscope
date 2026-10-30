@@ -3,7 +3,9 @@ name: Nightly job feed
 # Every night: scan each sponsoring employer's public career board (career-ops
 # scanner, feed/portals.yml), rebuild web/data/jobs.json, commit the feed state,
 # and redeploy the site. A push made with GITHUB_TOKEN does not trigger other
-# workflows, so this workflow deploys Pages itself.
+# workflows, and deploying from this job would reuse the starting commit's
+# Pages version (so the new data would not go live). Instead it dispatches
+# deploy.yml, which builds from the new commit on main.
 
 on:
   schedule:
@@ -12,8 +14,7 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  actions: write   # to start the Deploy site workflow after committing the feed
 
 concurrency:
   group: nightly-feed
@@ -56,17 +57,18 @@ jobs:
         run: SCANNER_DIR="$PWD/.scanner" node scripts/build-feed.mjs --max-fetch 6000
 
       - name: Commit feed
+        id: commit
         run: |
           git config user.name "sponsorpilot-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add web/data/jobs.json web/data/meta.json feed/jd-cache.json feed/first-seen.json
-          if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+          if git diff --cached --quiet; then echo "No changes."; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m "Nightly feed $(date -u +%Y-%m-%d): $(node -p "require('./web/data/meta.json').jobs") jobs"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: web
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy the new feed
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main --repo "$GITHUB_REPOSITORY"
