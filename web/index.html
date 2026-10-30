@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SponsorPilot — sponsor-friendly job hunting, end to end</title>
   <meta name="description" content="Build your resume, find jobs at U.S. employers that actually sponsor visas, see your fit, and draft your application — all in one place." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <header class="site-header">
@@ -34,7 +34,15 @@
         <input id="q" type="search" placeholder="Role or keyword (e.g. data analyst, backend, ML)…" aria-label="Role or keyword" />
         <input id="loc" type="search" placeholder="Location (e.g. CA, remote)…" aria-label="Location" />
         <label class="toggle"><input type="checkbox" id="sponsorsOnly" checked /> Sponsors only</label>
+        <label class="toggle"><input type="checkbox" id="hideNoSponsor" checked /> Hide "no sponsorship" jobs</label>
+        <label class="toggle"><input type="checkbox" id="newOnly" /> New since last update</label>
+        <select id="sortBy" aria-label="Sort jobs">
+          <option value="fit">Best fit</option>
+          <option value="new">Newest</option>
+          <option value="sponsor">Strongest sponsor</option>
+        </select>
       </div>
+      <p id="feedMeta" class="meta feed-meta"></p>
       <p id="jobsMeta" class="meta"></p>
       <div id="jobList" class="cards" aria-live="polite"></div>
     </section>
@@ -43,6 +51,13 @@
     <section id="view-resume" class="view" hidden>
       <div class="resume-grid">
         <form id="resumeForm" class="resume-form" autocomplete="on">
+          <div class="upload-box">
+            <h2>Start from your resume</h2>
+            <p class="meta">Upload a PDF, Word (.docx) or text resume. It's read <strong>in this browser only</strong> — never uploaded to a server.
+              We pull out your skills to rank jobs by fit; you can edit everything below.</p>
+            <label class="primary upload-btn">Upload resume<input type="file" id="resumeFile" accept=".pdf,.docx,.txt,.md" hidden /></label>
+            <span id="uploadNote" class="saved-note"></span>
+          </div>
           <h2>Your details</h2>
           <div class="field-row">
             <label>Full name <input name="name" placeholder="Jordan Lee" /></label>
@@ -101,9 +116,9 @@
       </label>
       <label>Model
         <select id="aiModel">
-          <option value="claude-opus-4-8">Claude Opus 4.8 (best)</option>
-          <option value="claude-sonnet-5">Claude Sonnet 5 (cheaper)</option>
-          <option value="claude-haiku-4-5">Claude Haiku 4.5 (cheapest)</option>
+          <option value="claude-opus-5-5">Claude Opus 5.5 (best)</option>
+          <option value="claude-sonnet-5-5">Claude Sonnet 5.5 (cheaper)</option>
+          <option value="claude-haiku-5-5">Claude Haiku 5.5 (cheapest)</option>
         </select>
       </label>
       <div class="row-actions">
@@ -131,12 +146,14 @@
       <p class="disclaimer">
         <strong>Not legal or immigration advice.</strong> Sponsorship signals come from public DOL OFLC LCA &amp; USCIS
         H-1B Employer Data Hub disclosures; historical sponsorship is not a guarantee for any future role. Fit scores are a
-        keyword-overlap guide, not a prediction. Jobs are pulled from employers' own public career-board APIs.
+        keyword-overlap guide, not a prediction. Jobs are pulled nightly from employers' own public career-board APIs
+        (scanner: <a href="https://github.com/career-ops-hq/career-ops" target="_blank" rel="noopener">career-ops</a>, MIT).
+        "No sponsorship" warnings quote the posting's own text — always read the full posting.
       </p>
     </div>
   </footer>
 
-  <script src="ai.js"></script>
-  <script src="app.js"></script>
+  <script src="ai.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

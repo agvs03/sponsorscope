@@ -11,13 +11,23 @@ const usd = (n) => (n == null ? null : "$" + Math.round(n / 1000) + "k");
 const RESUME_KEY = "sponsorpilot.resume";
 const TRACKER_KEY = "sponsorpilot.tracker";
 
+const PAGE = 150;
+
 let JOBS = [];
 let USING_SAMPLE = false;
+let META = null;      // feed run stats: latest_day marks "new"
+let SKILLS = [];      // [name, RegExp] — same vocabulary the feed builder tags jobs with
+let shown = PAGE;
 
 /* ----------------------------- boot + nav ------------------------------ */
 async function boot() {
-  JOBS = await loadJobs();
+  [JOBS, META, SKILLS] = await Promise.all([loadJobs(), getJson("data/meta.json"), loadSkills()]);
   if (USING_SAMPLE) $("#demoBanner").hidden = false;
+  if (META) {
+    const d = new Date(META.generated_at);
+    $("#feedMeta").textContent = `${META.jobs.toLocaleString()} open roles at ${META.companies} sponsoring employers · ` +
+      `${META.new_today.toLocaleString()} new · updated ${d.toLocaleDateString(undefined, { month: "short", day: "numeric" })} ${d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}`;
+  }
   setupTabs();
   setupSettings();
   setupResume();
@@ -31,7 +41,7 @@ function setupSettings() {
   const modal = $("#settings");
   const open = () => {
     $("#aiKey").value = window.SponsorPilotAI?.getKey() || "";
-    $("#aiModel").value = window.SponsorPilotAI?.getModel() || "claude-opus-4-8";
+    $("#aiModel").value = window.SponsorPilotAI?.getModel() || "claude-opus-5-5";
     modal.hidden = false;
   };
   const close = () => (modal.hidden = true);
@@ -72,6 +82,69 @@ async function loadJobs() {
   }
   return [];
 }
+async function getJson(url) {
+  try { const r = await fetch(url, { cache: "no-cache" }); return r.ok ? await r.json() : null; } catch { return null; }
+}
+async function loadSkills() {
+  return ((await getJson("data/skills.json")) || []).map(([name, pat, cs]) => [name, new RegExp(pat, cs ? "" : "i")]);
+}
+
+/* ---------------------------- resume upload ---------------------------- */
+// Parsed entirely in the browser; the file never leaves the device. PDF and
+// Word readers load from cdnjs on first use only.
+const loadScript = (src) => new Promise((ok, fail) => {
+  if ([...document.scripts].some((s) => s.src === src)) return ok();
+  const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = () => fail(new Error("could not load " + src));
+  document.head.appendChild(s);
+});
+const PDFJS = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/";
+const MAMMOTH = "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js";
+
+async function fileText(file) {
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".pdf")) {
+    await loadScript(PDFJS + "pdf.min.js");
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + "pdf.worker.min.js";
+    const pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+    const pages = [];
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const c = await (await pdf.getPage(i)).getTextContent();
+      pages.push(c.items.map((it) => it.str + (it.hasEOL ? "\n" : " ")).join(""));
+    }
+    return pages.join("\n");
+  }
+  if (name.endsWith(".docx")) {
+    await loadScript(MAMMOTH);
+    return (await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() })).value;
+  }
+  return file.text();
+}
+
+async function importResume(file) {
+  const note = $("#uploadNote");
+  note.textContent = "Reading " + file.name + "…";
+  try {
+    const text = await fileText(file);
+    const found = SKILLS.filter(([, re]) => re.test(text)).map(([n]) => n);
+    const form = $("#resumeForm");
+    const have = skillList(form.elements.skills.value);
+    const merged = [...have, ...found.filter((s) => !have.some((h) => h.toLowerCase() === s.toLowerCase()))];
+    form.elements.skills.value = merged.join(", ");
+    const lines = text.split(/\n/).map((l) => l.trim()).filter(Boolean);
+    const email = text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/);
+    const phone = text.match(/(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/);
+    if (!form.elements.email.value && email) form.elements.email.value = email[0];
+    if (!form.elements.phone.value && phone) form.elements.phone.value = phone[0].trim();
+    if (!form.elements.name.value && lines[0] && lines[0].length < 60 && !/@|\d/.test(lines[0])) form.elements.name.value = lines[0];
+    collectResume(); renderPreview();
+    note.textContent = found.length
+      ? `✓ Found ${found.length} skills — jobs are now ranked by your fit. Review your details below.`
+      : "Read the file but found no skills we recognize — add them in the Skills box.";
+    renderJobs();
+  } catch (e) {
+    note.textContent = "Couldn't read that file (" + e.message + "). Try a .docx or .txt copy.";
+  }
+}
 
 /* ------------------------------- resume -------------------------------- */
 function getResume() {
@@ -101,6 +174,7 @@ function setupResume() {
     renderJobs();
   });
   $("#printResume").addEventListener("click", () => window.print());
+  $("#resumeFile").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) importResume(f); e.target.value = ""; });
   renderPreview();
 }
 
@@ -161,9 +235,13 @@ const skillList = (s) => (s || "").split(",").map((x) => x.trim()).filter(Boolea
 
 /* -------------------------------- jobs --------------------------------- */
 function setupJobs() {
-  ["#q", "#loc"].forEach((sel) => $(sel).addEventListener("input", renderJobs));
-  $("#sponsorsOnly").addEventListener("change", renderJobs);
+  const reset = () => { shown = PAGE; renderJobs(); };
+  ["#q", "#loc"].forEach((sel) => $(sel).addEventListener("input", reset));
+  ["#sponsorsOnly", "#hideNoSponsor", "#newOnly", "#sortBy"].forEach((sel) => $(sel).addEventListener("change", reset));
 }
+const isNew = (j) => META && j.first_seen === META.latest_day;
+const blocked = (j) => j.flags && (j.flags.no_sponsor || j.flags.citizenship || j.flags.clearance);
+const fmtDate = (d) => (d ? new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "");
 
 function fit(job) {
   const mine = new Set(skillList(getResume().skills).map((s) => s.toLowerCase()));
@@ -180,6 +258,7 @@ function fit(job) {
 function sponsorScore(j) {
   const s = j.sponsorship;
   if (!s || !s.sponsors) return 0;
+  if (s.tier) return ({ strong: 0.7, moderate: 0.45 }[s.tier] ?? 0.2) + Math.min(0.3, Math.log10((s.filings || 0) + 1) / 12);
   const t = { up: 1, flat: 0.6, down: 0.25 }[s.trend] ?? 0.5;
   return (s.approval_rate ?? 0.8) * 0.6 + t * 0.4;
 }
@@ -188,42 +267,63 @@ function renderJobs() {
   const q = $("#q").value.trim().toLowerCase();
   const loc = $("#loc").value.trim().toLowerCase();
   const sponsorsOnly = $("#sponsorsOnly").checked;
+  const hideNo = $("#hideNoSponsor").checked;
+  const newOnly = $("#newOnly").checked;
+  const sortBy = $("#sortBy").value;
   const hasResume = skillList(getResume().skills).length > 0;
 
   let list = JOBS.filter((j) => {
     if (sponsorsOnly && !(j.sponsorship && j.sponsorship.sponsors)) return false;
+    if (hideNo && blocked(j)) return false;
+    if (newOnly && !isNew(j)) return false;
     if (q && !(`${j.title} ${j.company} ${(j.skills || []).join(" ")}`.toLowerCase().includes(q))) return false;
     if (loc && !(`${j.location} ${j.remote ? "remote" : ""}`.toLowerCase().includes(loc))) return false;
     return true;
   });
 
-  list = list.map((j) => ({ j, f: fit(j), s: sponsorScore(j) }))
-    .sort((a, b) => (hasResume ? (b.f.score ?? -1) - (a.f.score ?? -1) || b.s - a.s : b.s - a.s));
+  const newest = (a, b) => (b.j.posted || b.j.first_seen || "").localeCompare(a.j.posted || a.j.first_seen || "");
+  const order = {
+    fit: (a, b) => (hasResume ? (b.f.score ?? -1) - (a.f.score ?? -1) : 0) || newest(a, b) || b.s - a.s,
+    new: (a, b) => newest(a, b) || b.s - a.s,
+    sponsor: (a, b) => b.s - a.s || newest(a, b),
+  }[sortBy];
+  list = list.map((j) => ({ j, f: fit(j), s: sponsorScore(j) })).sort(order);
 
-  $("#jobsMeta").textContent = `${list.length} job${list.length === 1 ? "" : "s"}` +
+  $("#jobsMeta").textContent = `${list.length.toLocaleString()} job${list.length === 1 ? "" : "s"}` +
     (sponsorsOnly ? " at employers with sponsorship history" : "") +
-    (hasResume ? " · ranked by fit to your resume" : " · add a resume to see your fit");
+    (hasResume ? (sortBy === "fit" ? " · ranked by fit to your resume" : "") : " · upload your resume (Resume Builder tab) to see your fit");
 
   const box = $("#jobList");
-  if (!list.length) { box.innerHTML = `<p class="empty">No matching jobs. Try a broader keyword or turn off "Sponsors only".</p>`; return; }
-  box.innerHTML = list.map(({ j, f }) => {
+  if (!list.length) { box.innerHTML = `<p class="empty">No matching jobs. Try a broader keyword or turn off a filter.</p>`; return; }
+  box.innerHTML = list.slice(0, shown).map(({ j, f }) => {
     const sp = j.sponsorship;
-    return `<div class="job" data-id="${esc(j.id)}">
+    const warn = blocked(j);
+    return `<div class="job${warn ? " warned" : ""}" data-id="${esc(j.id)}">
       <div class="top">
-        <div><div class="title">${esc(j.title)}</div><div class="co">${esc(j.company)} · ${esc(j.location)}${j.remote ? " · Remote" : ""}</div></div>
-        ${sp && sp.sponsors ? sponsorBadge(sp.trend) : `<span class="badge no">no sponsor history</span>`}
+        <div><div class="title">${isNew(j) ? `<span class="badge new">new</span> ` : ""}${esc(j.title)}</div>
+          <div class="co">${esc(j.company)} · ${esc(j.location)}${j.remote && !/remote/i.test(j.location) ? " · Remote" : ""}</div></div>
+        ${sp && sp.sponsors ? sponsorBadge(sp) : `<span class="badge no">no sponsor record</span>`}
       </div>
       <div class="sub">
         ${f.score != null ? `<span class="match">${f.score}% fit</span>` : ""}
+        ${j.posted ? `<span>Posted ${fmtDate(j.posted)}</span>` : j.first_seen ? `<span>Seen ${fmtDate(j.first_seen)}</span>` : ""}
+        ${sp && sp.filings ? `<span>${sp.filings.toLocaleString()} H-1B filings</span>` : ""}
         ${sp && sp.median_wage ? `<span>~${usd(sp.median_wage)}/yr typical</span>` : ""}
         ${sp && sp.approval_rate != null ? `<span>${Math.round(sp.approval_rate * 100)}% USCIS approval</span>` : ""}
+        ${warn ? `<span class="warn">⚠ ${j.flags.no_sponsor ? "posting says no sponsorship" : j.flags.citizenship ? "US citizenship required" : "security clearance"}</span>` : ""}
       </div></div>`;
-  }).join("");
+  }).join("") + (list.length > shown ? `<button class="ghost more" id="showMore">Show ${Math.min(PAGE, list.length - shown)} more of ${(list.length - shown).toLocaleString()}</button>` : "");
   $$(".job", box).forEach((el) => el.addEventListener("click", () => openDrawer(el.dataset.id)));
+  const more = $("#showMore");
+  if (more) more.onclick = () => { shown += PAGE; renderJobs(); };
 }
-function sponsorBadge(trend) {
-  const label = { up: "▲ sponsoring — rising", down: "▼ sponsoring — declining", flat: "▬ sponsoring — steady" }[trend] || "sponsors";
-  return `<span class="badge ${trend}">${label}</span>`;
+function sponsorBadge(sp) {
+  if (sp.tier) {
+    const label = { strong: "● strong sponsor", moderate: "◐ sponsors" }[sp.tier] || "some sponsorship";
+    return `<span class="badge ${sp.tier === "strong" ? "up" : "flat"}">${label}</span>`;
+  }
+  const label = { up: "▲ sponsoring — rising", down: "▼ sponsoring — declining", flat: "▬ sponsoring — steady" }[sp.trend] || "sponsors";
+  return `<span class="badge ${sp.trend}">${label}</span>`;
 }
 
 /* ---------------------------- job detail ------------------------------- */
@@ -235,14 +335,19 @@ function openDrawer(id) {
   $("#drawerPanel").innerHTML = `
     <button class="close-x" id="closeDrawer">×</button>
     <h2>${esc(j.title)}</h2>
-    <div class="co">${esc(j.company)} · ${esc(j.location)}${j.remote ? " · Remote" : ""}</div>
+    <div class="co">${esc(j.company)} · ${esc(j.location)}${j.remote && !/remote/i.test(j.location) ? " · Remote" : ""}</div>
+    <div class="co">${[j.posted && "Posted " + fmtDate(j.posted), j.first_seen && "first seen here " + fmtDate(j.first_seen)].filter(Boolean).join(" · ")}</div>
+    ${blocked(j) ? `<div class="warn-box">⚠ This posting's own text says:
+      <q>${esc(j.flags.no_sponsor || j.flags.citizenship || j.flags.clearance)}</q>
+      ${j.flags.no_sponsor ? "Even though this employer sponsors for other roles, this one may not." : ""}</div>` : ""}
     <div class="stats">
       <div class="stat"><div class="k">Your fit</div><div class="v">${f.score != null ? f.score + "%" : "—"}</div></div>
       <div class="stat"><div class="k">Sponsors?</div><div class="v">${sp.sponsors ? "Yes" : "No record"}</div></div>
       <div class="stat"><div class="k">USCIS approval</div><div class="v">${sp.approval_rate != null ? Math.round(sp.approval_rate * 100) + "%" : "—"}</div></div>
       <div class="stat"><div class="k">Typical wage</div><div class="v">${usd(sp.median_wage) || "—"}</div></div>
     </div>
-    ${j.description ? `<h4>About the role</h4><p>${esc(j.description)}</p>` : ""}
+    ${sp.filings ? `<p class="meta">DOL record: ${sp.filings.toLocaleString()} H-1B filings${sp.green_cards ? ` · ${sp.green_cards.toLocaleString()} green-card (PERM) filings` : ""}${sp.years ? ` · ${esc(sp.years)}` : ""}.</p>` : ""}
+    ${j.description ? `<h4>About the role</h4><p>${esc(j.description)}${j.description.length >= 400 ? "…" : ""}</p>` : ""}
     <h4>Skills match</h4>
     <p>${f.have.length ? `<span class="have">✓ ${f.have.map(esc).join(", ")}</span>` : ""}
        ${f.miss.length ? `<br><span class="miss">▲ Consider adding: ${f.miss.map(esc).join(", ")}</span>` : ""}

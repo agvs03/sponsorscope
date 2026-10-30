@@ -128,3 +128,22 @@ input, textarea, select { font: inherit; color: var(--text); }
   #resumePreview, #resumePreview * { visibility: visible; }
   #resumePreview { position: absolute; inset: 0; border: none; box-shadow: none; padding: 0; }
 }
+
+/* --- live feed additions --- */
+.filters select { padding: 11px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 11px; }
+.feed-meta { margin-bottom: 0; }
+.badge.new { color: #fff; background: var(--accent); font-size: .62rem; vertical-align: 2px; }
+.job.warned { opacity: .78; }
+.job .warn { color: var(--down); font-weight: 600; }
+.warn-box { margin: 12px 0; padding: 10px 12px; border-radius: 10px; font-size: .88rem;
+  border: 1px solid color-mix(in srgb, var(--down) 40%, transparent); background: color-mix(in srgb, var(--down) 8%, transparent); }
+.warn-box q { display: block; margin: 6px 0; font-style: italic; }
+.more { display: block; margin: 14px auto; }
+.upload-box { border: 1px dashed var(--accent); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px;
+  background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.upload-box h2 { margin: 0 0 4px; }
+.upload-btn { display: inline-block; cursor: pointer; }
+.resume-form label.upload-btn { color: #fff; font-size: .95rem; margin: 6px 8px 0 0; }
+@media (max-width: 600px) { .filters .toggle { flex: 1 1 45%; } .filters select { flex: 1 1 100%; } }
+
+[hidden] { display: none !important; }

@@ -13,7 +13,7 @@
 (function () {
   const KEY = "sponsorpilot.aikey";
   const MODEL_KEY = "sponsorpilot.aimodel";
-  const DEFAULT_MODEL = "claude-opus-4-8";
+  const DEFAULT_MODEL = "claude-opus-5-5";
   const ENDPOINT = "https://api.anthropic.com/v1/messages";
 
   function getKey() { return localStorage.getItem(KEY) || ""; }

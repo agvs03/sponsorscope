@@ -78,7 +78,9 @@ is mistaken for real figures until you connect real sources.
 - [x] `pipeline/jobs.py` — live ingestion of sponsoring companies' ATS boards (Greenhouse/Lever/Ashby) into `web/data/jobs.json` (seed list in `pipeline/companies.yaml`)
 - [x] Optional **AI layer** (Claude API, bring-your-own-key): resume-tailored drafts + honest fit explanations (⚙ AI menu)
 - [ ] Saved-search **agent**: notify you when new sponsor-friendly jobs match
-- [ ] Auto-run `pipeline/jobs.py` in the deploy workflow so the live site shows real jobs
+- [x] Nightly live feed: `.github/workflows/nightly.yml` scans 400+ sponsoring employers' boards (Greenhouse/Lever/Ashby/Workday/iCIMS) with the career-ops scanner and redeploys
+- [x] Resume upload (PDF/DOCX/TXT, parsed in the browser) → skill extraction → fit ranking
+- [ ] Accounts: saved resume + tracker across devices, daily "new matches" email
 
 ### Using the AI features
 
@@ -88,7 +90,21 @@ explanations, open the **⚙ AI** menu and paste your own
 your browser and used only for your own calls (you pay Anthropic for usage) — nothing
 is sent to us. This keeps the site free to host with no shared API costs.
 
-### Fetching real jobs
+### The nightly feed
+
+`.github/workflows/nightly.yml` runs at 07:00 UTC (2 AM CDT) and on demand (Actions → Nightly job feed → Run workflow):
+
+1. Checks out the [career-ops](https://github.com/career-ops-hq/career-ops) scanner (MIT, pinned commit) and scans every board in `feed/portals.yml`.
+2. `scripts/build-feed.mjs` fetches each *new* posting's description from the ATS's public API (cached in `feed/jd-cache.json`), tags skills (`web/data/skills.json`) and flags postings whose text says no sponsorship / US citizenship / clearance.
+3. Joins DOL/USCIS sponsorship stats from `feed/sponsors.json`, writes `web/data/jobs.json` + `meta.json`, commits, and deploys Pages.
+
+`feed/portals.yml` and `feed/sponsors.json` are generated locally by `scripts/export-companies.mjs` from a career-ops install plus the DOL LCA / USCIS data — re-run it to add employers or refresh sponsorship numbers.
+
+### Custom domain
+
+Settings → Pages → Source: **GitHub Actions**; Custom domain: `jobs.arikatla.dev`, Enforce HTTPS. At the DNS host add `CNAME jobs → agvs03.github.io`.
+
+### Fetching real jobs (legacy Python path)
 
 ```bash
 pip install -r requirements.txt

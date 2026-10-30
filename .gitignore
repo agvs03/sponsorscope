@@ -14,6 +14,9 @@ data/*.db
 
 # Generated site data EXCEPT the small committed samples (so the demo renders)
 web/data/*.json
+!web/data/jobs.json
+!web/data/meta.json
+!web/data/skills.json
 !web/data/sample.employers.json
 !web/data/sample.index.json
 !web/data/sample.jobs.json
@@ -25,3 +28,8 @@ web/data/*.json
 *.swp
 .DS_Store
 Thumbs.db
+
+# Scanner working files (rebuilt every nightly run)
+feed/data/
+feed/scan.log
+.scanner/
