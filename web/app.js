@@ -246,6 +246,13 @@ function setupJobs() {
 }
 const isNew = (j) => META && j.first_seen === META.latest_day;
 const blocked = (j) => j.flags && (j.flags.no_sponsor || j.flags.citizenship || j.flags.clearance);
+// Cards show the first two places; the detail drawer keeps the full list.
+function shortLoc(loc) {
+  const places = String(loc || "").split(/\s+[·\/;|]\s+/).map((x) => x.trim()).filter(Boolean);
+  const clip = (x) => (x.length > 48 ? x.slice(0, 46).trimEnd() + "…" : x);
+  const head = places.slice(0, 2).map(clip).join(" · ");
+  return places.length > 2 ? `${head} +${places.length - 2} more` : head;
+}
 const fmtDate = (d) => (d ? new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "");
 
 function fit(job) {
@@ -306,7 +313,7 @@ function renderJobs() {
     return `<div class="job${warn ? " warned" : ""}" data-id="${esc(j.id)}">
       <div class="top">
         <div><div class="title">${isNew(j) ? `<span class="badge new">new</span> ` : ""}${esc(j.title)}</div>
-          <div class="co">${esc(j.company)} · ${esc(j.location)}${j.remote && !/remote/i.test(j.location) ? " · Remote" : ""}</div></div>
+          <div class="co" title="${esc(j.location)}">${esc(j.company)} · ${esc(shortLoc(j.location))}${j.remote && !/remote/i.test(j.location) ? " · Remote" : ""}</div></div>
         ${sp && sp.sponsors ? sponsorBadge(sp) : `<span class="badge no">no sponsor record</span>`}
       </div>
       <div class="sub">
