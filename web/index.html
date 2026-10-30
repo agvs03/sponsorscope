@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SponsorPilot — sponsor-friendly job hunting, end to end</title>
   <meta name="description" content="Build your resume, find jobs at U.S. employers that actually sponsor visas, see your fit, and draft your application — all in one place." />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <header class="site-header">
@@ -19,6 +19,7 @@
         <button class="tab" data-view="resume">Resume Builder</button>
         <button class="tab" data-view="tracker">My Tracker <span id="trackerCount" class="pill">0</span></button>
         <button class="tab" id="settingsBtn" title="AI settings">⚙ AI</button>
+        <button class="tab" id="acctBtn" hidden>Sign in</button>
       </nav>
     </div>
   </header>
@@ -41,6 +42,7 @@
           <option value="new">Newest</option>
           <option value="sponsor">Strongest sponsor</option>
         </select>
+        <button class="ghost" id="alertMe" hidden title="Email me new jobs matching this search every morning">🔔 Alert me</button>
       </div>
       <p id="feedMeta" class="meta feed-meta"></p>
       <p id="jobsMeta" class="meta"></p>
@@ -135,6 +137,15 @@
     </div>
   </div>
 
+  <!-- Account modal (account.js) -->
+  <div id="account" class="modal" hidden>
+    <div class="modal-scrim" id="acctScrim"></div>
+    <div class="modal-panel">
+      <button class="close-x" id="acctClose">×</button>
+      <div id="acctBody"></div>
+    </div>
+  </div>
+
   <!-- Job detail drawer -->
   <div id="drawer" class="drawer" hidden>
     <div class="drawer-panel" id="drawerPanel"></div>
@@ -149,11 +160,14 @@
         keyword-overlap guide, not a prediction. Jobs are pulled nightly from employers' own public career-board APIs
         (scanner: <a href="https://github.com/career-ops-hq/career-ops" target="_blank" rel="noopener">career-ops</a>, MIT).
         "No sponsorship" warnings quote the posting's own text — always read the full posting.
+        <a href="privacy.html">Privacy</a>
       </p>
     </div>
   </footer>
 
-  <script src="ai.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="config.js?v=5"></script>
+  <script src="account.js?v=5"></script>
+  <script src="ai.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

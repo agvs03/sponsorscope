@@ -147,3 +147,13 @@ input, textarea, select { font: inherit; color: var(--text); }
 @media (max-width: 600px) { .filters .toggle { flex: 1 1 45%; } .filters select { flex: 1 1 100%; } }
 
 [hidden] { display: none !important; }
+
+/* --- accounts --- */
+.wide { width: 100%; margin-top: 8px; }
+.or { text-align: center; color: var(--muted); font-size: .8rem; margin: 10px 0 2px; }
+.alerts { display: grid; gap: 8px; margin: 8px 0; }
+.alert-row { display: flex; gap: 10px; align-items: center; justify-content: space-between; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
+.alert-row .meta { margin: 2px 0 0; }
+.danger { color: var(--down); border-color: color-mix(in srgb, var(--down) 40%, transparent); }
+#account label { display: block; margin: 10px 0 4px; font-size: .85rem; color: var(--muted); }
+#account input[type="email"] { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); box-sizing: border-box; }

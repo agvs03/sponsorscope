@@ -80,7 +80,7 @@ is mistaken for real figures until you connect real sources.
 - [ ] Saved-search **agent**: notify you when new sponsor-friendly jobs match
 - [x] Nightly live feed: `.github/workflows/nightly.yml` scans 400+ sponsoring employers' boards (Greenhouse/Lever/Ashby/Workday/iCIMS) with the career-ops scanner and redeploys
 - [x] Resume upload (PDF/DOCX/TXT, parsed in the browser) → skill extraction → fit ranking
-- [ ] Accounts: saved resume + tracker across devices, daily "new matches" email
+- [x] Accounts (email link / Google via Supabase): synced resume + tracker, saved searches, daily "new matches" email
 
 ### Using the AI features
 
@@ -99,6 +99,19 @@ is sent to us. This keeps the site free to host with no shared API costs.
 3. Joins DOL/USCIS sponsorship stats from `feed/sponsors.json`, writes `web/data/jobs.json` + `meta.json`, commits, and deploys Pages.
 
 `feed/portals.yml` and `feed/sponsors.json` are generated locally by `scripts/export-companies.mjs` from a career-ops install plus the DOL LCA / USCIS data — re-run it to add employers or refresh sponsorship numbers.
+
+### Accounts + daily alerts (optional)
+
+Off until `web/config.js` has a Supabase URL + anon key; signed-out use is unchanged.
+
+1. Create a Supabase project → SQL Editor → run `supabase/schema.sql` (tables with row-level security, `delete_my_account()`, `unsubscribe()`).
+2. Project Settings → API: put the **Project URL** and **anon public** key in `web/config.js` (public by design).
+3. Authentication → URL Configuration: Site URL `https://jobs.arikatla.dev`; add it to Redirect URLs.
+4. Google sign-in: Google Cloud → OAuth client (Web), authorized redirect URI `https://<project>.supabase.co/auth/v1/callback`; paste client ID/secret into Authentication → Providers → Google.
+5. Email: Resend → verify `arikatla.dev` (DNS records at the registrar) → API key. Supabase Authentication → SMTP: host `smtp.resend.com`, port 465, user `resend`, password = API key (the built-in sender is rate-limited to a few emails/hour).
+6. GitHub repo → Settings → Secrets → Actions: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (service_role key — secret, never in the site), `RESEND_API_KEY`, `ALERT_FROM` (e.g. `SponsorPilot <alerts@arikatla.dev>`).
+
+`scripts/send-alerts.mjs` runs after each nightly feed: one email per user with the new postings matching their saved searches, ranked by fit to their saved skills, each with a one-click unsubscribe link (`web/unsubscribe.html`).
 
 ### Custom domain
 

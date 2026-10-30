@@ -61,13 +61,13 @@ function setupSettings() {
 }
 
 function setupTabs() {
-  $$("#tabs .tab").forEach((t) =>
+  $$("#tabs .tab[data-view]").forEach((t) =>
     t.addEventListener("click", () => showView(t.dataset.view)));
 }
 function showView(view) {
   $$(".view").forEach((v) => (v.hidden = true));
   $("#view-" + view).hidden = false;
-  $$("#tabs .tab").forEach((t) => t.classList.toggle("active", t.dataset.view === view));
+  $$("#tabs .tab[data-view]").forEach((t) => t.classList.toggle("active", t.dataset.view === view));
   if (view === "jobs") renderJobs();
   if (view === "resume") renderPreview();
   if (view === "tracker") renderTracker();
@@ -159,23 +159,28 @@ function getResume() {
 function blankResume() {
   return { name: "", email: "", phone: "", location: "", linkedin: "", summary: "", skills: "", experience: [], education: [] };
 }
-function saveResume(r) { localStorage.setItem(RESUME_KEY, JSON.stringify(r)); }
+function saveResume(r) { localStorage.setItem(RESUME_KEY, JSON.stringify(r)); window.SponsorPilotAccount?.onResume(r); }
 
-function setupResume() {
-  const r = getResume();
+function fillResumeForm(r) {
   const form = $("#resumeForm");
   ["name", "email", "phone", "location", "linkedin", "summary", "skills"].forEach((k) => {
     if (form.elements[k]) form.elements[k].value = r[k] || "";
   });
-  (r.experience.length ? r.experience : [{}]).forEach(addExpRow);
-  (r.education.length ? r.education : [{}]).forEach(addEduRow);
+  $("#expList").innerHTML = ""; $("#eduList").innerHTML = "";
+  ((r.experience || []).length ? r.experience : [{}]).forEach(addExpRow);
+  ((r.education || []).length ? r.education : [{}]).forEach(addEduRow);
+}
+
+function setupResume() {
+  const form = $("#resumeForm");
+  fillResumeForm(getResume());
 
   form.addEventListener("input", () => { collectResume(); renderPreview(); });
   $("#addExp").addEventListener("click", () => addExpRow({}));
   $("#addEdu").addEventListener("click", () => addEduRow({}));
   $("#saveResume").addEventListener("click", () => {
     saveResume(collectResume());
-    const n = $("#resumeSaved"); n.textContent = "✓ Saved to this browser"; setTimeout(() => (n.textContent = ""), 2500);
+    const n = $("#resumeSaved"); n.textContent = window.SponsorPilotAccount?.user() ? "✓ Saved to your account" : "✓ Saved to this browser"; setTimeout(() => (n.textContent = ""), 2500);
     renderJobs();
   });
   $("#printResume").addEventListener("click", () => window.print());
@@ -241,8 +246,23 @@ const skillList = (s) => (s || "").split(",").map((x) => x.trim()).filter(Boolea
 /* -------------------------------- jobs --------------------------------- */
 function setupJobs() {
   const reset = () => { shown = PAGE; renderJobs(); };
+  // Links from alert emails: ?q=java&loc=remote&new=1
+  const qs = new URLSearchParams(location.search);
+  if (qs.get("q")) $("#q").value = qs.get("q");
+  if (qs.get("loc")) $("#loc").value = qs.get("loc");
+  if (qs.get("new") === "1") $("#newOnly").checked = true;
   ["#q", "#loc"].forEach((sel) => $(sel).addEventListener("input", reset));
   ["#sponsorsOnly", "#hideNoSponsor", "#newOnly", "#sortBy"].forEach((sel) => $(sel).addEventListener("change", reset));
+  const alertBtn = $("#alertMe");
+  if (window.SponsorPilotAccount?.enabled) {
+    alertBtn.hidden = false;
+    alertBtn.onclick = async () => {
+      const f = { q: $("#q").value.trim(), loc: $("#loc").value.trim(), sponsorsOnly: $("#sponsorsOnly").checked, hideNo: $("#hideNoSponsor").checked };
+      if (await window.SponsorPilotAccount.saveSearch(f)) {
+        alertBtn.textContent = "✓ Alert saved"; setTimeout(() => (alertBtn.textContent = "🔔 Alert me"), 2500);
+      }
+    };
+  }
 }
 const isNew = (j) => META && j.first_seen === META.latest_day;
 const blocked = (j) => j.flags && (j.flags.no_sponsor || j.flags.citizenship || j.flags.clearance);
@@ -424,10 +444,12 @@ ${name}`;
 /* ------------------------------ tracker -------------------------------- */
 function getTracker() { try { return JSON.parse(localStorage.getItem(TRACKER_KEY)) || []; } catch { return []; } }
 function setTracker(t) { localStorage.setItem(TRACKER_KEY, JSON.stringify(t)); $("#trackerCount").textContent = t.length; }
+// A user change: store locally and sync to the account when signed in.
+function saveTracker(t) { setTracker(t); window.SponsorPilotAccount?.onTracker(t); }
 function isTracked(id) { return getTracker().some((x) => x.id === id); }
 function track(j) {
   const t = getTracker();
-  if (!t.some((x) => x.id === j.id)) { t.push({ id: j.id, title: j.title, company: j.company, url: j.url, status: "Saved" }); setTracker(t); }
+  if (!t.some((x) => x.id === j.id)) { t.push({ id: j.id, title: j.title, company: j.company, url: j.url, status: "Saved" }); saveTracker(t); }
 }
 function renderTracker() {
   const t = getTracker();
@@ -442,10 +464,18 @@ function renderTracker() {
       <select data-st="${esc(x.id)}">${statuses.map((s) => `<option ${s === x.status ? "selected" : ""}>${s}</option>`).join("")}</select>
       ${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">open ↗</a>` : ""}
     </div></div>`).join("");
-  $$("[data-rm]", box).forEach((b) => b.onclick = () => { setTracker(getTracker().filter((y) => y.id !== b.dataset.rm)); renderTracker(); });
+  $$("[data-rm]", box).forEach((b) => b.onclick = () => { saveTracker(getTracker().filter((y) => y.id !== b.dataset.rm)); renderTracker(); });
   $$("[data-st]", box).forEach((sel) => sel.onchange = () => {
-    const t2 = getTracker(); const it = t2.find((y) => y.id === sel.dataset.st); if (it) it.status = sel.value; setTracker(t2);
+    const t2 = getTracker(); const it = t2.find((y) => y.id === sel.dataset.st); if (it) it.status = sel.value; saveTracker(t2);
   });
 }
+
+// Hooks for account.js: it pulls the account copy after sign-in and re-renders.
+window.SponsorPilotApp = {
+  getResume, getTracker,
+  setResume: (r) => localStorage.setItem(RESUME_KEY, JSON.stringify({ ...blankResume(), ...r })),
+  setTrackerList: (t) => setTracker(t),
+  refresh: () => { fillResumeForm(getResume()); renderPreview(); renderTracker(); renderJobs(); },
+};
 
 boot();

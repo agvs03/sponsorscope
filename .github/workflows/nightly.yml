@@ -73,6 +73,17 @@ jobs:
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
+      - name: Send job alert emails
+        if: steps.commit.outputs.changed == 'true'
+        # Skips itself until the secrets below are added (repo Settings → Secrets → Actions).
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_FROM: ${{ secrets.ALERT_FROM }}
+          SITE_URL: https://jobs.arikatla.dev
+        run: node scripts/send-alerts.mjs || echo "::warning::alert emails failed"
+
       - name: Deploy the new feed
         if: steps.commit.outputs.changed == 'true'
         env:
