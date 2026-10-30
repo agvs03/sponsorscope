@@ -41,12 +41,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: .scanner/package-lock.json
+          # The scanner has no package-lock.json, so no npm cache and no `npm ci`.
 
       - name: Install scanner dependencies
         working-directory: .scanner
-        run: npm ci --omit=dev --ignore-scripts --no-audit --no-fund
+        run: npm install --omit=dev --ignore-scripts --no-audit --no-fund --no-package-lock
 
       - name: Scan employer career boards
         run: |
