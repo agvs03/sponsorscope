@@ -54,7 +54,13 @@ jobs:
           CAREER_OPS_ROOT="$PWD/feed" node .scanner/scan.mjs --since 30 | tail -25
 
       - name: Build the job feed
-        run: SCANNER_DIR="$PWD/.scanner" node scripts/build-feed.mjs --max-fetch 6000
+        # Retries resume from feed/jd-cache.json, which the builder checkpoints.
+        run: |
+          for i in 1 2 3 4; do
+            SCANNER_DIR="$PWD/.scanner" node scripts/build-feed.mjs --max-fetch 20000 && exit 0
+            echo "build-feed attempt $i failed; resuming"
+          done
+          exit 1
 
       - name: Commit feed
         id: commit

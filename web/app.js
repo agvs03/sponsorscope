@@ -77,7 +77,12 @@ async function loadJobs() {
   for (const [url, sample] of [["data/jobs.json", false], ["data/sample.jobs.json", true]]) {
     try {
       const r = await fetch(url, { cache: "no-cache" });
-      if (r.ok) { USING_SAMPLE = sample; return await r.json(); }
+      if (!r.ok) continue;
+      USING_SAMPLE = sample;
+      const data = await r.json();
+      if (Array.isArray(data)) return data;
+      // Live feed: sponsorship is stored once per company.
+      return data.jobs.map((j) => ({ ...j, remote: /remote/i.test(j.location), sponsorship: data.companies[j.company] || { sponsors: null } }));
     } catch (_) { /* next */ }
   }
   return [];

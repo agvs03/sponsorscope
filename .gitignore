@@ -32,4 +32,5 @@ Thumbs.db
 # Scanner working files (rebuilt every nightly run)
 feed/data/
 feed/scan.log
+feed/build.log
 .scanner/

@@ -1,5 +1,6 @@
 {
  "42dot": {
+  "display": "42dot",
   "tier": "moderate",
   "entity": "42dot Inc.",
   "filings": 6,
@@ -12,6 +13,7 @@
   "approval_rate": null
  },
  "66degrees": {
+  "display": "66degrees",
   "tier": "strong",
   "entity": "66DEGREES, LLC",
   "filings": 30,
@@ -24,6 +26,7 @@
   "approval_rate": null
  },
  "abbott": {
+  "display": "Abbott Laboratories",
   "tier": "strong",
   "entity": "Abbott Laboratories",
   "filings": 574,
@@ -36,6 +39,7 @@
   "approval_rate": 1
  },
  "accuray": {
+  "display": "Accuray",
   "tier": "strong",
   "entity": "Accuray Incorporated",
   "filings": 39,
@@ -47,19 +51,8 @@
   "top_titles": null,
   "approval_rate": null
  },
- "aero": {
-  "tier": "moderate",
-  "entity": "Aero Technologies, Inc.",
-  "filings": 10,
-  "green_cards": 0,
-  "years": "2020-2025",
-  "staffing": false,
-  "median_wage": null,
-  "fy26_tech_filings": null,
-  "top_titles": null,
-  "approval_rate": null
- },
  "affirm": {
+  "display": "Affirm",
   "tier": "strong",
   "entity": "Affirm, Inc.",
   "filings": 797,
@@ -72,6 +65,7 @@
   "approval_rate": null
  },
  "airbyte": {
+  "display": "Airbyte",
   "tier": "strong",
   "entity": "Airbyte, Inc.",
   "filings": 46,
@@ -84,6 +78,7 @@
   "approval_rate": null
  },
  "airwallex": {
+  "display": "Airwallex",
   "tier": "strong",
   "entity": "Airwallex US, LLC",
   "filings": 61,
@@ -96,6 +91,7 @@
   "approval_rate": 0.857
  },
  "alarmcom": {
+  "display": "Alarm.com",
   "tier": "strong",
   "entity": "Alarm.com Inc.",
   "filings": 89,
@@ -108,6 +104,7 @@
   "approval_rate": null
  },
  "alcon": {
+  "display": "Alcon Research",
   "tier": "strong",
   "entity": "Alcon Research, LLC",
   "filings": 391,
@@ -120,6 +117,7 @@
   "approval_rate": null
  },
  "aledade": {
+  "display": "Aledade",
   "tier": "strong",
   "entity": "Aledade, Inc.",
   "filings": 59,
@@ -132,6 +130,7 @@
   "approval_rate": null
  },
  "alluxio": {
+  "display": "Alluxio",
   "tier": "strong",
   "entity": "Alluxio, Inc.",
   "filings": 38,
@@ -144,6 +143,7 @@
   "approval_rate": null
  },
  "alteryx": {
+  "display": "Alteryx",
   "tier": "strong",
   "entity": "Alteryx, Inc.",
   "filings": 58,
@@ -156,6 +156,7 @@
   "approval_rate": null
  },
  "alto": {
+  "display": "Alto Pharmacy",
   "tier": "strong",
   "entity": "Alto Pharmacy, LLC",
   "filings": 20,
@@ -168,6 +169,7 @@
   "approval_rate": null
  },
  "ambiqmicroinc": {
+  "display": "Ambiq Micro",
   "tier": "strong",
   "entity": "Ambiq Micro, Inc.",
   "filings": 45,
@@ -180,6 +182,7 @@
   "approval_rate": null
  },
  "amcor": {
+  "display": "Amcor Rigid Packaging",
   "tier": "strong",
   "entity": "Amcor Rigid Packaging USA, LLC",
   "filings": 37,
@@ -191,7 +194,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "AMD": {
+  "display": "AMD",
+  "tier": "strong",
+  "entity": "AMD Design LLC",
+  "filings": 49,
+  "green_cards": 0,
+  "years": "2025-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "ameren": {
+  "display": "Ameren Services",
   "tier": "strong",
   "entity": "Ameren Services Company",
   "filings": 53,
@@ -204,6 +221,7 @@
   "approval_rate": null
  },
  "americancentury": {
+  "display": "American Century Investment Management",
   "tier": "strong",
   "entity": "American Century Investment Management Inc.",
   "filings": 15,
@@ -216,6 +234,7 @@
   "approval_rate": null
  },
  "americanfidelity": {
+  "display": "American Fidelity Assurance",
   "tier": "strong",
   "entity": "American Fidelity Assurance Company",
   "filings": 29,
@@ -228,6 +247,7 @@
   "approval_rate": null
  },
  "ameriprise": {
+  "display": "Ameriprise Financial",
   "tier": "strong",
   "entity": "Ameriprise Financial, Inc.",
   "filings": 483,
@@ -240,6 +260,7 @@
   "approval_rate": 0.927
  },
  "amgen": {
+  "display": "Amgen",
   "tier": "strong",
   "entity": "Amgen Inc.",
   "filings": 3240,
@@ -252,6 +273,7 @@
   "approval_rate": null
  },
  "analogdevices": {
+  "display": "Analog Devices",
   "tier": "strong",
   "entity": "Analog Devices, Inc.",
   "filings": 1296,
@@ -264,6 +286,7 @@
   "approval_rate": null
  },
  "andersonsinc": {
+  "display": "The Andersons",
   "tier": "strong",
   "entity": "The Andersons, Inc.",
   "filings": 33,
@@ -276,6 +299,7 @@
   "approval_rate": null
  },
  "andurilindustries": {
+  "display": "Anduril Industries",
   "tier": "strong",
   "entity": "Anduril Industries, Inc.",
   "filings": 5,
@@ -288,6 +312,7 @@
   "approval_rate": null
  },
  "Anthropic": {
+  "display": "Anthropic",
   "tier": "strong",
   "entity": "Anthropic, PBC",
   "filings": 433,
@@ -300,6 +325,7 @@
   "approval_rate": 0.985
  },
  "apptronik": {
+  "display": "Apptronik",
   "tier": "strong",
   "entity": "APPTRONIK, INC.",
   "filings": 68,
@@ -311,7 +337,21 @@
   "top_titles": "SOFTWARE ENGINEER - AUTONOMY | SENIOR SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Arize AI": {
+  "display": "Arize AI",
+  "tier": "weak",
+  "entity": "Arize AI, Inc.",
+  "filings": 4,
+  "green_cards": 0,
+  "years": "2022-2026",
+  "staffing": false,
+  "median_wage": 165000,
+  "fy26_tech_filings": 1,
+  "top_titles": "DEVELOPER RELATIONS ENGINEER",
+  "approval_rate": null
+ },
  "asml": {
+  "display": "Asml",
   "tier": "strong",
   "entity": "ASML US, LP",
   "filings": 2056,
@@ -324,6 +364,7 @@
   "approval_rate": 1
  },
  "assorthealth": {
+  "display": "Assort Health",
   "tier": "moderate",
   "entity": "Assort Health, Inc.",
   "filings": 9,
@@ -336,6 +377,7 @@
   "approval_rate": null
  },
  "astera": {
+  "display": "Astera Labs",
   "tier": "strong",
   "entity": "Astera Labs INC",
   "filings": 226,
@@ -348,6 +390,7 @@
   "approval_rate": null
  },
  "asteralabs": {
+  "display": "Astera Labs",
   "tier": "strong",
   "entity": "Astera Labs INC",
   "filings": 226,
@@ -360,6 +403,7 @@
   "approval_rate": null
  },
  "astrazeneca": {
+  "display": "AstraZeneca Pharmaceuticals",
   "tier": "strong",
   "entity": "AstraZeneca Pharmaceuticals LP",
   "filings": 1030,
@@ -372,6 +416,7 @@
   "approval_rate": null
  },
  "athenahealth": {
+  "display": "athenahealth",
   "tier": "strong",
   "entity": "athenahealth, Inc.",
   "filings": 600,
@@ -384,6 +429,7 @@
   "approval_rate": 1
  },
  "attotrading": {
+  "display": "Atto Trading Technologies",
   "tier": "moderate",
   "entity": "Atto Trading Technologies LLC",
   "filings": 5,
@@ -396,6 +442,7 @@
   "approval_rate": null
  },
  "authenticinsurance": {
+  "display": "Authentic Insurance Services",
   "tier": "strong",
   "entity": "Authentic Insurance Services, Inc.",
   "filings": 8,
@@ -408,6 +455,7 @@
   "approval_rate": null
  },
  "autodesk": {
+  "display": "Autodesk",
   "tier": "strong",
   "entity": "Autodesk, Inc.",
   "filings": 1649,
@@ -420,6 +468,7 @@
   "approval_rate": null
  },
  "availity": {
+  "display": "Availity",
   "tier": "strong",
   "entity": "Availity, LLC",
   "filings": 22,
@@ -432,6 +481,7 @@
   "approval_rate": null
  },
  "aveva": {
+  "display": "Aveva Software",
   "tier": "strong",
   "entity": "AVEVA SOFTWARE, LLC",
   "filings": 204,
@@ -444,6 +494,7 @@
   "approval_rate": null
  },
  "axion": {
+  "display": "Axion Ray",
   "tier": "moderate",
   "entity": "Axion Ray, Inc.",
   "filings": 17,
@@ -455,7 +506,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Axon": {
+  "display": "Axon",
+  "tier": "strong",
+  "entity": "Axon Enterprise, Inc.",
+  "filings": 558,
+  "green_cards": 64,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 174144,
+  "fy26_tech_filings": 57,
+  "top_titles": "SOFTWARE ENGINEER II | SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER I",
+  "approval_rate": null
+ },
  "bah": {
+  "display": "Booz Allen Hamilton",
   "tier": "strong",
   "entity": "Booz Allen Hamilton Inc.",
   "filings": 181,
@@ -468,6 +533,7 @@
   "approval_rate": 1
  },
  "bakertilly": {
+  "display": "Baker Tilly Advisory Group",
   "tier": "strong",
   "entity": "Baker Tilly Advisory Group, LP",
   "filings": 179,
@@ -480,6 +546,7 @@
   "approval_rate": null
  },
  "bandwidth": {
+  "display": "Bandwidth",
   "tier": "strong",
   "entity": "BANDWIDTH, INC.",
   "filings": 82,
@@ -492,6 +559,7 @@
   "approval_rate": null
  },
  "barrywehmiller": {
+  "display": "Barry-Wehmiller Companies",
   "tier": "strong",
   "entity": "Barry-Wehmiller Companies, Inc.",
   "filings": 41,
@@ -504,6 +572,7 @@
   "approval_rate": null
  },
  "baseten": {
+  "display": "Baseten Labs",
   "tier": "strong",
   "entity": "Baseten Labs, Inc.",
   "filings": 53,
@@ -516,6 +585,7 @@
   "approval_rate": 1
  },
  "bcbst": {
+  "display": "BlueCross BlueShield of Tennessee",
   "tier": "strong",
   "entity": "BlueCross BlueShield of Tennessee, Inc.",
   "filings": 235,
@@ -528,6 +598,7 @@
   "approval_rate": null
  },
  "bitsight": {
+  "display": "Bitsight Technologies",
   "tier": "strong",
   "entity": "Bitsight Technologies, Inc.",
   "filings": 49,
@@ -539,7 +610,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER I",
   "approval_rate": null
  },
+ "Black Forest Labs": {
+  "display": "Black Forest Labs",
+  "tier": "weak",
+  "entity": "Black Forest Labs Inc.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2025-2026",
+  "staffing": false,
+  "median_wage": 230000,
+  "fy26_tech_filings": 1,
+  "top_titles": "FORWARD DEPLOYED ML ENGINEER",
+  "approval_rate": null
+ },
  "bloomenergy": {
+  "display": "Bloom Energy",
   "tier": "strong",
   "entity": "Bloom Energy Corporation",
   "filings": 221,
@@ -551,7 +636,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Blue Cross Blue Shield of Kansas": {
+  "display": "Blue Cross Blue Shield of Kansas",
+  "tier": "weak",
+  "entity": "BLUE CROSS BLUE SHIELD OF KANSAS CITY",
+  "filings": 0,
+  "green_cards": 4,
+  "years": "2019-2021",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "bluesight": {
+  "display": "Bluesight",
   "tier": "strong",
   "entity": "Bluesight, Inc.",
   "filings": 4,
@@ -564,6 +663,7 @@
   "approval_rate": null
  },
  "bobyard": {
+  "display": "Bobyard",
   "tier": "moderate",
   "entity": "Bobyard, Inc.",
   "filings": 6,
@@ -576,6 +676,7 @@
   "approval_rate": null
  },
  "boeing": {
+  "display": "The Boeing",
   "tier": "strong",
   "entity": "The Boeing Company",
   "filings": 281,
@@ -587,7 +688,34 @@
   "top_titles": "SENIOR PROGRAMMER ANALYST",
   "approval_rate": null
  },
+ "Bolt": {
+  "display": "Bolt",
+  "tier": "strong",
+  "entity": "Bolt Financial Inc.",
+  "filings": 77,
+  "green_cards": 13,
+  "years": "2020-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "Boomi": {
+  "display": "Boomi",
+  "tier": "strong",
+  "entity": "Boomi L.P.",
+  "filings": 191,
+  "green_cards": 34,
+  "years": "2021-2026",
+  "staffing": false,
+  "median_wage": 106800,
+  "fy26_tech_filings": 1,
+  "top_titles": "SOFTWARE ENGINEER 2",
+  "approval_rate": null
+ },
  "boon": {
+  "display": "Boon Technologies",
   "tier": "strong",
   "entity": "Boon Technologies, Inc.",
   "filings": 4,
@@ -600,6 +728,7 @@
   "approval_rate": null
  },
  "boulevard": {
+  "display": "Boulevard Labs",
   "tier": "moderate",
   "entity": "Boulevard Labs, Inc.",
   "filings": 13,
@@ -612,6 +741,7 @@
   "approval_rate": null
  },
  "boxinc": {
+  "display": "Box",
   "tier": "strong",
   "entity": "Box, Inc.",
   "filings": 644,
@@ -624,6 +754,7 @@
   "approval_rate": null
  },
  "brainco": {
+  "display": "BrainCo",
   "tier": "strong",
   "entity": "BrainCo Inc.",
   "filings": 26,
@@ -636,6 +767,7 @@
   "approval_rate": null
  },
  "braze": {
+  "display": "Braze",
   "tier": "strong",
   "entity": "Braze, Inc.",
   "filings": 79,
@@ -648,6 +780,7 @@
   "approval_rate": 1
  },
  "brighthorizons": {
+  "display": "Bright Horizons Children's Centers",
   "tier": "strong",
   "entity": "Bright Horizons Children's Centers LLC",
   "filings": 115,
@@ -660,6 +793,7 @@
   "approval_rate": null
  },
  "bristolmyerssquibb": {
+  "display": "Bristol-Myers Squibb",
   "tier": "strong",
   "entity": "Bristol-Myers Squibb Company",
   "filings": 1579,
@@ -671,7 +805,21 @@
   "top_titles": "SENIOR CLOUD & AI DEVELOPER/ENGINEER | SOFTWARE ENGINEER",
   "approval_rate": 1
  },
+ "Broadcom": {
+  "display": "Broadcom",
+  "tier": "strong",
+  "entity": "Broadcom Corporation",
+  "filings": 646,
+  "green_cards": 134,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 187165,
+  "fy26_tech_filings": 10,
+  "top_titles": "R&D ENGINEER SOFTWARE",
+  "approval_rate": 0.964
+ },
  "broadridge": {
+  "display": "Broadridge Financial Solutions",
   "tier": "strong",
   "entity": "BROADRIDGE FINANCIAL SOLUTIONS, INC.",
   "filings": 675,
@@ -684,6 +832,7 @@
   "approval_rate": null
  },
  "caci": {
+  "display": "Caci - Federal",
   "tier": "strong",
   "entity": "CACI, INC - FEDERAL",
   "filings": 19,
@@ -696,6 +845,7 @@
   "approval_rate": null
  },
  "cat": {
+  "display": "Caterpillar",
   "tier": "strong",
   "entity": "Caterpillar Inc",
   "filings": 1920,
@@ -708,6 +858,7 @@
   "approval_rate": null
  },
  "cccis": {
+  "display": "CCC Intelligent Solutions",
   "tier": "strong",
   "entity": "CCC Intelligent Solutions, Inc",
   "filings": 488,
@@ -719,7 +870,21 @@
   "top_titles": "SR. SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER | SENIOR AI ENGINEER",
   "approval_rate": null
  },
+ "Celonis": {
+  "display": "Celonis",
+  "tier": "strong",
+  "entity": "Celonis, Inc.",
+  "filings": 63,
+  "green_cards": 15,
+  "years": "2020-2026",
+  "staffing": false,
+  "median_wage": 180706,
+  "fy26_tech_filings": 6,
+  "top_titles": "SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER | SOFTWARE ENGINEER - MACHINE LEARNING",
+  "approval_rate": null
+ },
  "checkbook": {
+  "display": "Checkbook",
   "tier": "moderate",
   "entity": "Checkbook Inc.",
   "filings": 7,
@@ -732,6 +897,7 @@
   "approval_rate": null
  },
  "checkr": {
+  "display": "Checkr",
   "tier": "strong",
   "entity": "Checkr, Inc.",
   "filings": 115,
@@ -743,7 +909,21 @@
   "top_titles": "SOFTWARE ENGINEER | SOFTWARE ENGINEER II | SENIOR SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Chime": {
+  "display": "Chime",
+  "tier": "strong",
+  "entity": "Chime Financial, Inc.",
+  "filings": 668,
+  "green_cards": 139,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 190000,
+  "fy26_tech_filings": 34,
+  "top_titles": "SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "chrobinson": {
+  "display": "C.H. Robinson Worldwide",
   "tier": "strong",
   "entity": "C.H. Robinson Worldwide, Inc.",
   "filings": 58,
@@ -756,6 +936,7 @@
   "approval_rate": null
  },
  "cigna": {
+  "display": "Cigna-Evernorth Services",
   "tier": "strong",
   "entity": "Cigna-Evernorth Services Inc.",
   "filings": 2216,
@@ -768,6 +949,7 @@
   "approval_rate": 0.996
  },
  "cisco": {
+  "display": "Cisco Systems",
   "tier": "strong",
   "entity": "Cisco Systems, Inc.",
   "filings": 10328,
@@ -780,6 +962,7 @@
   "approval_rate": null
  },
  "clarify": {
+  "display": "Clarify Health Solutions",
   "tier": "strong",
   "entity": "Clarify Health Solutions, Inc.",
   "filings": 27,
@@ -792,6 +975,7 @@
   "approval_rate": null
  },
  "clark": {
+  "display": "Clark Construction Group",
   "tier": "moderate",
   "entity": "Clark Construction Group, LLC",
   "filings": 47,
@@ -803,7 +987,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Clay Labs": {
+  "display": "Clay Labs",
+  "tier": "strong",
+  "entity": "Clay Labs Inc.",
+  "filings": 38,
+  "green_cards": 0,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 130000,
+  "fy26_tech_filings": 4,
+  "top_titles": "SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "clearstreet": {
+  "display": "Clear Street Management",
   "tier": "strong",
   "entity": "Clear Street Management LLC",
   "filings": 85,
@@ -815,7 +1013,21 @@
   "top_titles": "SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Clerk": {
+  "display": "Clerk",
+  "tier": "weak",
+  "entity": "Clerk Retail, Inc.",
+  "filings": 3,
+  "green_cards": 0,
+  "years": "2023-2024",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "cloudera": {
+  "display": "Cloudera",
   "tier": "strong",
   "entity": "Cloudera, Inc.",
   "filings": 553,
@@ -828,6 +1040,7 @@
   "approval_rate": null
  },
  "cna": {
+  "display": "Continental Casualty",
   "tier": "strong",
   "entity": "Continental Casualty Company",
   "filings": 202,
@@ -840,6 +1053,7 @@
   "approval_rate": null
  },
  "Cohere": {
+  "display": "Cohere",
   "tier": "strong",
   "entity": "Cohere Health, Inc.",
   "filings": 104,
@@ -852,6 +1066,7 @@
   "approval_rate": 1
  },
  "collectorsuniverse": {
+  "display": "Collectors Universe",
   "tier": "strong",
   "entity": "Collectors Universe, Inc.",
   "filings": 40,
@@ -864,6 +1079,7 @@
   "approval_rate": null
  },
  "collegeboard": {
+  "display": "College Board",
   "tier": "strong",
   "entity": "College Board",
   "filings": 44,
@@ -876,6 +1092,7 @@
   "approval_rate": null
  },
  "commons": {
+  "display": "The Commons XR",
   "tier": "moderate",
   "entity": "The Commons XR, LLC",
   "filings": 5,
@@ -888,6 +1105,7 @@
   "approval_rate": null
  },
  "commure": {
+  "display": "Commure",
   "tier": "strong",
   "entity": "Commure, Inc.",
   "filings": 129,
@@ -899,7 +1117,60 @@
   "top_titles": "SOFTWARE ENGINEER II | SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER",
   "approval_rate": 1
  },
+ "Confluent": {
+  "display": "Confluent",
+  "tier": "strong",
+  "entity": "Confluent, Inc.",
+  "filings": 739,
+  "green_cards": 235,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 189592,
+  "fy26_tech_filings": 36,
+  "top_titles": "SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER II",
+  "approval_rate": null
+ },
+ "Contentful": {
+  "display": "Contentful",
+  "tier": "weak",
+  "entity": "Contentful Inc.",
+  "filings": 6,
+  "green_cards": 0,
+  "years": "2020-2023",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "Corti": {
+  "display": "Corti",
+  "tier": "weak",
+  "entity": "Corti America, Inc",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2024-2024",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "Cradle": {
+  "display": "Cradle",
+  "tier": "weak",
+  "entity": "Cradle Accounting, Inc.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2022-2023",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "creditacceptance": {
+  "display": "Credit Acceptance",
   "tier": "strong",
   "entity": "Credit Acceptance Corporation",
   "filings": 216,
@@ -912,6 +1183,7 @@
   "approval_rate": 1
  },
  "crosscountry-consulting": {
+  "display": "CrossCountry Consulting",
   "tier": "strong",
   "entity": "CrossCountry Consulting LLC",
   "filings": 218,
@@ -924,6 +1196,7 @@
   "approval_rate": null
  },
  "crowdstrike": {
+  "display": "CrowdStrike",
   "tier": "strong",
   "entity": "CrowdStrike, Inc.",
   "filings": 554,
@@ -935,7 +1208,21 @@
   "top_titles": "SOFTWARE DEVELOPMENT ENGINEER IN TEST / ENGINEER III | SOFTWARE ENGINEER - PLATFORM | CLOUD ENGINEER III - SPOTLIGHT",
   "approval_rate": null
  },
+ "Crusoe": {
+  "display": "Crusoe",
+  "tier": "strong",
+  "entity": "Crusoe Technologies LLC",
+  "filings": 211,
+  "green_cards": 1,
+  "years": "2022-2026",
+  "staffing": false,
+  "median_wage": 280000,
+  "fy26_tech_filings": 8,
+  "top_titles": "STAFF SOFTWARE ENGINEER | SENIOR API ENGINEER | SOFTWARE ENGINEER II",
+  "approval_rate": null
+ },
  "crypto": {
+  "display": "Crypto Miner Service",
   "tier": "strong",
   "entity": "Crypto Miner Service Inc",
   "filings": 14,
@@ -948,6 +1235,7 @@
   "approval_rate": null
  },
  "csiweb": {
+  "display": "Computer Services",
   "tier": "strong",
   "entity": "Computer Services, Inc.",
   "filings": 40,
@@ -960,6 +1248,7 @@
   "approval_rate": null
  },
  "cvshealth": {
+  "display": "CVS Pharmacy",
   "tier": "strong",
   "entity": "CVS Pharmacy Inc.",
   "filings": 2421,
@@ -972,6 +1261,7 @@
   "approval_rate": null
  },
  "dataminr": {
+  "display": "Dataminr",
   "tier": "strong",
   "entity": "Dataminr, Inc.",
   "filings": 107,
@@ -984,6 +1274,7 @@
   "approval_rate": null
  },
  "datasite": {
+  "display": "Datasite",
   "tier": "strong",
   "entity": "Datasite LLC",
   "filings": 38,
@@ -996,6 +1287,7 @@
   "approval_rate": null
  },
  "Decagon": {
+  "display": "Decagon",
   "tier": "strong",
   "entity": "Decagon AI, Inc.",
   "filings": 38,
@@ -1007,7 +1299,34 @@
   "top_titles": "MEMBER OF TECHNICAL STAFF (SOFTWARE ENGINEER INFRASTRUCTURE) | SOFTWARE ENGINEER, AGENT ORCHESTRATION | SOFTWARE ENGINEER, ASWE",
   "approval_rate": null
  },
+ "Deepgram": {
+  "display": "Deepgram",
+  "tier": "strong",
+  "entity": "Deepgram, Inc.",
+  "filings": 6,
+  "green_cards": 1,
+  "years": "2022-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "DeepL": {
+  "display": "DeepL",
+  "tier": "weak",
+  "entity": "DeepL US Inc.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2025-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "depthfirst": {
+  "display": "DepthFirst AI",
   "tier": "moderate",
   "entity": "DepthFirst AI, Inc.",
   "filings": 12,
@@ -1020,6 +1339,7 @@
   "approval_rate": null
  },
  "directsupply": {
+  "display": "Direct Supply",
   "tier": "strong",
   "entity": "DIRECT SUPPLY, INC.",
   "filings": 44,
@@ -1032,6 +1352,7 @@
   "approval_rate": null
  },
  "disney": {
+  "display": "Disney Entertainment & Sports",
   "tier": "strong",
   "entity": "DISNEY ENTERTAINMENT & SPORTS LLC",
   "filings": 105,
@@ -1044,6 +1365,7 @@
   "approval_rate": null
  },
  "doss": {
+  "display": "Doss",
   "tier": "strong",
   "entity": "Doss Inc.",
   "filings": 15,
@@ -1055,7 +1377,21 @@
   "top_titles": "BACKEND ENGINEER | SENIOR BACKEND ENGINEER",
   "approval_rate": null
  },
+ "DraftKings": {
+  "display": "DraftKings",
+  "tier": "weak",
+  "entity": "Draftkings, INC.",
+  "filings": 35,
+  "green_cards": 0,
+  "years": "2019-2021",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "draper": {
+  "display": "Draper University",
   "tier": "strong",
   "entity": "Draper University, LLC",
   "filings": 3,
@@ -1068,6 +1404,7 @@
   "approval_rate": null
  },
  "drata": {
+  "display": "Drata",
   "tier": "strong",
   "entity": "Drata, Inc.",
   "filings": 11,
@@ -1080,6 +1417,7 @@
   "approval_rate": 1
  },
  "dxctechnology": {
+  "display": "DXC Technology Services",
   "tier": "moderate",
   "entity": "DXC Technology Services LLC",
   "filings": 888,
@@ -1092,6 +1430,7 @@
   "approval_rate": 1
  },
  "edwards": {
+  "display": "Edwards Lifesciences",
   "tier": "strong",
   "entity": "Edwards Lifesciences LLC",
   "filings": 395,
@@ -1104,6 +1443,7 @@
   "approval_rate": null
  },
  "elevancehealth": {
+  "display": "The Elevance Health Companies",
   "tier": "strong",
   "entity": "The Elevance Health Companies, Inc.",
   "filings": 4396,
@@ -1116,6 +1456,7 @@
   "approval_rate": null
  },
  "ElevenLabs": {
+  "display": "ElevenLabs",
   "tier": "strong",
   "entity": "Eleven Labs, Inc.",
   "filings": 6,
@@ -1128,6 +1469,7 @@
   "approval_rate": null
  },
  "employerdirecthealthcare": {
+  "display": "Employer Direct Healthcare",
   "tier": "strong",
   "entity": "Employer Direct Healthcare, LLC",
   "filings": 39,
@@ -1140,6 +1482,7 @@
   "approval_rate": null
  },
  "entegris": {
+  "display": "Entegris",
   "tier": "strong",
   "entity": "Entegris, Inc.",
   "filings": 255,
@@ -1152,6 +1495,7 @@
   "approval_rate": null
  },
  "entrust": {
+  "display": "Entrust",
   "tier": "strong",
   "entity": "Entrust Corporation",
   "filings": 21,
@@ -1164,6 +1508,7 @@
   "approval_rate": null
  },
  "epiqsystems": {
+  "display": "Epiq Systems",
   "tier": "strong",
   "entity": "Epiq Systems, Inc.",
   "filings": 9,
@@ -1176,6 +1521,7 @@
   "approval_rate": null
  },
  "episodesix": {
+  "display": "Episode Six North America",
   "tier": "strong",
   "entity": "Episode Six North America Corporation",
   "filings": 3,
@@ -1187,7 +1533,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Epsilon": {
+  "display": "Epsilon",
+  "tier": "strong",
+  "entity": "Epsilon Data Management LLC",
+  "filings": 966,
+  "green_cards": 119,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 133556,
+  "fy26_tech_filings": 28,
+  "top_titles": "SENIOR, SOFTWARE ENGINEER | SOFTWARE ENGINEER | LEAD, SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "equifax": {
+  "display": "Equifax",
   "tier": "strong",
   "entity": "Equifax Inc.",
   "filings": 1661,
@@ -1200,6 +1560,7 @@
   "approval_rate": null
  },
  "equiniti": {
+  "display": "Equiniti Trust",
   "tier": "strong",
   "entity": "Equiniti Trust Company, LLC",
   "filings": 15,
@@ -1212,6 +1573,7 @@
   "approval_rate": null
  },
  "etsy": {
+  "display": "Etsy",
   "tier": "strong",
   "entity": "Etsy, Inc.",
   "filings": 301,
@@ -1224,6 +1586,7 @@
   "approval_rate": null
  },
  "exadelinc": {
+  "display": "Exadel",
   "tier": "strong",
   "entity": "Exadel, Inc.",
   "filings": 3,
@@ -1236,6 +1599,7 @@
   "approval_rate": null
  },
  "exelixis": {
+  "display": "Exelixis",
   "tier": "strong",
   "entity": "Exelixis, Inc.",
   "filings": 187,
@@ -1248,6 +1612,7 @@
   "approval_rate": null
  },
  "extraspace": {
+  "display": "Extra Space Management",
   "tier": "strong",
   "entity": "Extra Space Management, Inc.",
   "filings": 17,
@@ -1260,6 +1625,7 @@
   "approval_rate": null
  },
  "factset": {
+  "display": "FactSet Research Systems",
   "tier": "strong",
   "entity": "FactSet Research Systems Inc.",
   "filings": 452,
@@ -1271,7 +1637,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER | LEAD SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Faculty": {
+  "display": "Faculty",
+  "tier": "strong",
+  "entity": "Faculty Physicians & Surgeons of LLUSM",
+  "filings": 108,
+  "green_cards": 6,
+  "years": "2020-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "fifththird": {
+  "display": "Fifth Third Bank, National Association",
   "tier": "strong",
   "entity": "Fifth Third Bank, National Association",
   "filings": 338,
@@ -1284,6 +1664,7 @@
   "approval_rate": 0.941
  },
  "finch-legal": {
+  "display": "Finch Legal",
   "tier": "strong",
   "entity": "Finch Legal",
   "filings": 7,
@@ -1296,6 +1677,7 @@
   "approval_rate": null
  },
  "firstam": {
+  "display": "First American Title Insurance",
   "tier": "strong",
   "entity": "First American Title Insurance Company",
   "filings": 71,
@@ -1308,6 +1690,7 @@
   "approval_rate": null
  },
  "firststudent": {
+  "display": "First Student",
   "tier": "strong",
   "entity": "First Student, Inc.",
   "filings": 5,
@@ -1320,6 +1703,7 @@
   "approval_rate": null
  },
  "fiserv": {
+  "display": "Fiserv Solutions",
   "tier": "strong",
   "entity": "Fiserv Solutions, LLC",
   "filings": 2694,
@@ -1332,6 +1716,7 @@
   "approval_rate": 1
  },
  "fivebelow": {
+  "display": "Five Below",
   "tier": "strong",
   "entity": "Five Below, Inc.",
   "filings": 68,
@@ -1344,6 +1729,7 @@
   "approval_rate": null
  },
  "flexerasoftware": {
+  "display": "Flexera Software",
   "tier": "strong",
   "entity": "FLEXERA SOFTWARE LLC",
   "filings": 97,
@@ -1356,6 +1742,7 @@
   "approval_rate": null
  },
  "flexport": {
+  "display": "Flexport",
   "tier": "strong",
   "entity": "Flexport, Inc.",
   "filings": 473,
@@ -1368,6 +1755,7 @@
   "approval_rate": null
  },
  "flextronics": {
+  "display": "Flextronics International",
   "tier": "strong",
   "entity": "Flextronics International USA, Inc.",
   "filings": 382,
@@ -1380,6 +1768,7 @@
   "approval_rate": null
  },
  "fluidstack": {
+  "display": "Fluidstack",
   "tier": "moderate",
   "entity": "Fluidstack Inc.",
   "filings": 25,
@@ -1392,6 +1781,7 @@
   "approval_rate": null
  },
  "freedomconsulting": {
+  "display": "Freedom Consulting Group",
   "tier": "moderate",
   "entity": "FREEDOM CONSULTING GROUP INC.",
   "filings": 7,
@@ -1404,6 +1794,7 @@
   "approval_rate": null
  },
  "freseniusmedicalcare": {
+  "display": "Fresenius Medical Care",
   "tier": "strong",
   "entity": "Fresenius Medical Care Holdings, Inc.",
   "filings": 2,
@@ -1416,6 +1807,7 @@
   "approval_rate": null
  },
  "gamechanger": {
+  "display": "GameChanger Media",
   "tier": "strong",
   "entity": "GameChanger Media, Inc.",
   "filings": 19,
@@ -1428,6 +1820,7 @@
   "approval_rate": null
  },
  "gelbergroup": {
+  "display": "Gelber Group",
   "tier": "strong",
   "entity": "Gelber Group, LLC",
   "filings": 16,
@@ -1440,6 +1833,7 @@
   "approval_rate": null
  },
  "generalmotors": {
+  "display": "General Motors",
   "tier": "strong",
   "entity": "General Motors",
   "filings": 4670,
@@ -1452,6 +1846,7 @@
   "approval_rate": 0.976
  },
  "generate": {
+  "display": "Generate Biomedicines",
   "tier": "strong",
   "entity": "Generate Biomedicines, Inc.",
   "filings": 56,
@@ -1463,7 +1858,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER II",
   "approval_rate": null
  },
+ "GetYourGuide": {
+  "display": "GetYourGuide",
+  "tier": "moderate",
+  "entity": "GetYourGuide, Inc.",
+  "filings": 6,
+  "green_cards": 0,
+  "years": "2020-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "Glean": {
+  "display": "Glean",
   "tier": "strong",
   "entity": "Glean Technologies, Inc.",
   "filings": 107,
@@ -1476,6 +1885,7 @@
   "approval_rate": null
  },
  "globusmedical": {
+  "display": "Globus Medical",
   "tier": "strong",
   "entity": "Globus Medical, Inc.",
   "filings": 108,
@@ -1488,6 +1898,7 @@
   "approval_rate": null
  },
  "goodleap": {
+  "display": "GoodLeap",
   "tier": "strong",
   "entity": "GoodLeap, LLC",
   "filings": 73,
@@ -1500,6 +1911,7 @@
   "approval_rate": null
  },
  "grahamcapitalmanagement": {
+  "display": "Graham Capital Management",
   "tier": "strong",
   "entity": "Graham Capital Management, L.P.",
   "filings": 40,
@@ -1512,6 +1924,7 @@
   "approval_rate": null
  },
  "guardianlife": {
+  "display": "The Guardian Life Insurance of America",
   "tier": "strong",
   "entity": "The Guardian Life Insurance Company of America",
   "filings": 401,
@@ -1524,6 +1937,7 @@
   "approval_rate": null
  },
  "guidehouse": {
+  "display": "Guidehouse",
   "tier": "strong",
   "entity": "Guidehouse Inc.",
   "filings": 258,
@@ -1536,6 +1950,7 @@
   "approval_rate": null
  },
  "guidewire": {
+  "display": "Guidewire Software",
   "tier": "strong",
   "entity": "GUIDEWIRE SOFTWARE, INC.",
   "filings": 698,
@@ -1548,6 +1963,7 @@
   "approval_rate": 1
  },
  "hackerone": {
+  "display": "HackerOne",
   "tier": "strong",
   "entity": "HackerOne Inc.",
   "filings": 5,
@@ -1560,6 +1976,7 @@
   "approval_rate": null
  },
  "harrisassociates": {
+  "display": "Harris Associates",
   "tier": "strong",
   "entity": "Harris Associates LP",
   "filings": 11,
@@ -1572,6 +1989,7 @@
   "approval_rate": null
  },
  "highmarkhealth": {
+  "display": "Highmark Health",
   "tier": "strong",
   "entity": "Highmark Health",
   "filings": 341,
@@ -1584,6 +2002,7 @@
   "approval_rate": null
  },
  "hitachi": {
+  "display": "Hitachi Vantara",
   "tier": "moderate",
   "entity": "Hitachi Vantara LLC",
   "filings": 879,
@@ -1596,6 +2015,7 @@
   "approval_rate": null
  },
  "homedepot": {
+  "display": "Home Depot Management",
   "tier": "strong",
   "entity": "Home Depot Management Company LLC",
   "filings": 1365,
@@ -1607,7 +2027,34 @@
   "top_titles": "STAFF SOFTWARE ENGINEER | SR. SOFTWARE ENGINEER | SOFTWARE ENGINEER PRINCIPAL",
   "approval_rate": null
  },
+ "Hootsuite": {
+  "display": "Hootsuite",
+  "tier": "weak",
+  "entity": "Hootsuite Media US Inc.",
+  "filings": 3,
+  "green_cards": 0,
+  "years": "2021-2021",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "hpe": {
+  "display": "Hewlett Packard Enterprise",
+  "tier": "strong",
+  "entity": "Hewlett Packard Enterprise Company",
+  "filings": 3713,
+  "green_cards": 780,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 149365,
+  "fy26_tech_filings": 276,
+  "top_titles": "SYSTEMS/SOFTWARE ENGINEER II | SYSTEMS/SOFTWARE ENGINEER III | CLOUD DEVELOPER III",
+  "approval_rate": 0.987
+ },
+ "HPE": {
+  "display": "HPE",
   "tier": "strong",
   "entity": "Hewlett Packard Enterprise Company",
   "filings": 3713,
@@ -1620,6 +2067,7 @@
   "approval_rate": 0.987
  },
  "humana": {
+  "display": "Humana",
   "tier": "strong",
   "entity": "Humana Inc.",
   "filings": 1654,
@@ -1631,7 +2079,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | SENIOR FULL STACK ENGINEER | SOFTWARE ENGINEER 2",
   "approval_rate": null
  },
+ "Hume AI": {
+  "display": "Hume AI",
+  "tier": "moderate",
+  "entity": "Hume AI, Inc.",
+  "filings": 9,
+  "green_cards": 0,
+  "years": "2022-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "huntington": {
+  "display": "The Huntington National Bank",
   "tier": "strong",
   "entity": "The Huntington National Bank",
   "filings": 634,
@@ -1644,6 +2106,7 @@
   "approval_rate": null
  },
  "iherb": {
+  "display": "iHerb",
   "tier": "strong",
   "entity": "iHerb, LLC",
   "filings": 18,
@@ -1656,6 +2119,7 @@
   "approval_rate": null
  },
  "illumina": {
+  "display": "Illumina",
   "tier": "strong",
   "entity": "Illumina, Inc.",
   "filings": 993,
@@ -1668,6 +2132,7 @@
   "approval_rate": null
  },
  "illumio": {
+  "display": "Illumio",
   "tier": "strong",
   "entity": "Illumio, Inc.",
   "filings": 199,
@@ -1680,6 +2145,7 @@
   "approval_rate": null
  },
  "ineos": {
+  "display": "INEOS Styrolution America",
   "tier": "strong",
   "entity": "INEOS Styrolution America LLC",
   "filings": 10,
@@ -1692,6 +2158,7 @@
   "approval_rate": null
  },
  "infuse": {
+  "display": "Infuse",
   "tier": "strong",
   "entity": "INFUSE, Inc. (formerly known as INFUSEmedia, Inc.)",
   "filings": 14,
@@ -1704,6 +2171,7 @@
   "approval_rate": null
  },
  "ingevity": {
+  "display": "Ingevity",
   "tier": "strong",
   "entity": "Ingevity Corporation",
   "filings": 16,
@@ -1715,7 +2183,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Inngest": {
+  "display": "Inngest",
+  "tier": "weak",
+  "entity": "Inngest, Inc.",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2025-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "insitu": {
+  "display": "Insitu",
   "tier": "strong",
   "entity": "Insitu, Inc.",
   "filings": 6,
@@ -1728,6 +2210,7 @@
   "approval_rate": null
  },
  "inspiremedicalsystemsinc": {
+  "display": "Inspire Medical Systems",
   "tier": "strong",
   "entity": "Inspire Medical Systems, Inc.",
   "filings": 9,
@@ -1739,7 +2222,21 @@
   "top_titles": "SR. SOFTWARE DEVELOPER, DYNAMICS",
   "approval_rate": null
  },
+ "Instacart": {
+  "display": "Instacart",
+  "tier": "strong",
+  "entity": "Maplebear Inc.",
+  "filings": 1101,
+  "green_cards": 371,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 220000,
+  "fy26_tech_filings": 51,
+  "top_titles": "SENIOR SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER | MACHINE LEARNING ENGINEER",
+  "approval_rate": null
+ },
  "instructure": {
+  "display": "Instructure",
   "tier": "strong",
   "entity": "Instructure, Inc.",
   "filings": 20,
@@ -1752,6 +2249,7 @@
   "approval_rate": null
  },
  "insulet": {
+  "display": "Insulet",
   "tier": "strong",
   "entity": "Insulet Corporation",
   "filings": 261,
@@ -1764,6 +2262,7 @@
   "approval_rate": null
  },
  "integralads": {
+  "display": "Integral Ad Science",
   "tier": "strong",
   "entity": "Integral Ad Science, Inc.",
   "filings": 69,
@@ -1775,7 +2274,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | STAFF MACHINE LEARNING ENGINEER",
   "approval_rate": null
  },
+ "Intercom": {
+  "display": "Intercom",
+  "tier": "strong",
+  "entity": "Intercom, Inc.",
+  "filings": 39,
+  "green_cards": 4,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "interdigital": {
+  "display": "InterDigital Communications",
   "tier": "strong",
   "entity": "InterDigital Communications, Inc.",
   "filings": 47,
@@ -1788,6 +2301,7 @@
   "approval_rate": null
  },
  "iqvia": {
+  "display": "Iqvia",
   "tier": "strong",
   "entity": "IQVIA Inc.",
   "filings": 1639,
@@ -1800,6 +2314,7 @@
   "approval_rate": null
  },
  "jabil": {
+  "display": "Jabil",
   "tier": "strong",
   "entity": "Jabil Inc.",
   "filings": 353,
@@ -1812,6 +2327,7 @@
   "approval_rate": null
  },
  "jadeglobal": {
+  "display": "Jade Global",
   "tier": "moderate",
   "entity": "JADE GLOBAL, INC.",
   "filings": 276,
@@ -1824,6 +2340,7 @@
   "approval_rate": null
  },
  "jci": {
+  "display": "Johnson Controls",
   "tier": "strong",
   "entity": "JOHNSON CONTROLS, INC.",
   "filings": 526,
@@ -1836,6 +2353,7 @@
   "approval_rate": null
  },
  "jll": {
+  "display": "Jones Lang LaSalle Americas",
   "tier": "strong",
   "entity": "Jones Lang LaSalle Americas, Inc.",
   "filings": 386,
@@ -1848,6 +2366,7 @@
   "approval_rate": null
  },
  "justworks": {
+  "display": "Justworks",
   "tier": "strong",
   "entity": "Justworks, Inc.",
   "filings": 91,
@@ -1860,6 +2379,7 @@
   "approval_rate": null
  },
  "juullabs": {
+  "display": "Juul Labs",
   "tier": "strong",
   "entity": "Juul Labs, Inc",
   "filings": 146,
@@ -1872,6 +2392,7 @@
   "approval_rate": null
  },
  "kcura": {
+  "display": "Relativity ODA",
   "tier": "strong",
   "entity": "Relativity ODA LLC",
   "filings": 156,
@@ -1884,6 +2405,7 @@
   "approval_rate": null
  },
  "keybank": {
+  "display": "KeyBank National Association",
   "tier": "strong",
   "entity": "KeyBank National Association",
   "filings": 229,
@@ -1895,7 +2417,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Keysight": {
+  "display": "Keysight",
+  "tier": "strong",
+  "entity": "KEYSIGHT TECHNOLOGIES, INC.",
+  "filings": 677,
+  "green_cards": 169,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 152131,
+  "fy26_tech_filings": 36,
+  "top_titles": "R&D ENGINEER 5, SOFTWARE | R&D ENGINEER 3, SOFTWARE | R&D ENGINEER 4, SOFTWARE",
+  "approval_rate": null
+ },
  "labcorp": {
+  "display": "Labcorp Early Development Laboratories",
   "tier": "strong",
   "entity": "Labcorp Early Development Laboratories Inc.",
   "filings": 51,
@@ -1907,7 +2443,34 @@
   "top_titles": "APPLICATION DEVELOPER III",
   "approval_rate": null
  },
+ "Lakera": {
+  "display": "Lakera",
+  "tier": "weak",
+  "entity": "Lakera Inc.",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2024-2024",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "LangChain": {
+  "display": "LangChain",
+  "tier": "moderate",
+  "entity": "LangChain Inc.",
+  "filings": 21,
+  "green_cards": 0,
+  "years": "2025-2026",
+  "staffing": false,
+  "median_wage": 187574,
+  "fy26_tech_filings": 8,
+  "top_titles": "SOFTWARE ENGINEER | BACKEND SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "learfield": {
+  "display": "Learfield Communications",
   "tier": "strong",
   "entity": "Learfield Communications, LLC",
   "filings": 27,
@@ -1920,6 +2483,7 @@
   "approval_rate": null
  },
  "Legora": {
+  "display": "Legora",
   "tier": "weak",
   "entity": "LEGORA, INC.",
   "filings": 1,
@@ -1932,6 +2496,7 @@
   "approval_rate": null
  },
  "leidos": {
+  "display": "Leidos",
   "tier": "moderate",
   "entity": "Leidos, Inc.",
   "filings": 450,
@@ -1944,6 +2509,7 @@
   "approval_rate": null
  },
  "lendingtree": {
+  "display": "LendingTree",
   "tier": "strong",
   "entity": "LendingTree, LLC",
   "filings": 243,
@@ -1956,6 +2522,7 @@
   "approval_rate": null
  },
  "lennar": {
+  "display": "Lennar",
   "tier": "strong",
   "entity": "Lennar Corporation",
   "filings": 82,
@@ -1968,6 +2535,7 @@
   "approval_rate": null
  },
  "life360": {
+  "display": "Life360",
   "tier": "strong",
   "entity": "Life360, Inc.",
   "filings": 129,
@@ -1980,6 +2548,7 @@
   "approval_rate": null
  },
  "locusrobotics": {
+  "display": "Locus Robotics",
   "tier": "strong",
   "entity": "Locus Robotics Corp",
   "filings": 25,
@@ -1992,6 +2561,7 @@
   "approval_rate": null
  },
  "loftorbital": {
+  "display": "Loft Orbital Solutions",
   "tier": "strong",
   "entity": "Loft Orbital Solutions, Inc.",
   "filings": 9,
@@ -2004,6 +2574,7 @@
   "approval_rate": null
  },
  "lorikeet": {
+  "display": "Lorikeet AI",
   "tier": "moderate",
   "entity": "Lorikeet AI LLC",
   "filings": 7,
@@ -2015,7 +2586,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Lovable": {
+  "display": "Lovable",
+  "tier": "weak",
+  "entity": "Lovable Labs Incorporated",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2026-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "lplfinancial": {
+  "display": "LPL Financial",
   "tier": "strong",
   "entity": "LPL Financial LLC",
   "filings": 666,
@@ -2028,6 +2613,7 @@
   "approval_rate": null
  },
  "lumentum": {
+  "display": "Lumentum Operations",
   "tier": "strong",
   "entity": "Lumentum Operations LLC",
   "filings": 133,
@@ -2040,6 +2626,7 @@
   "approval_rate": null
  },
  "mach9": {
+  "display": "Mach9 Robotics",
   "tier": "strong",
   "entity": "Mach9 Robotics Inc.",
   "filings": 4,
@@ -2052,6 +2639,7 @@
   "approval_rate": null
  },
  "macu": {
+  "display": "Mountain America Federal Credit Union",
   "tier": "strong",
   "entity": "Mountain America Federal Credit Union",
   "filings": 19,
@@ -2064,6 +2652,7 @@
   "approval_rate": null
  },
  "madhive": {
+  "display": "Madhive",
   "tier": "strong",
   "entity": "Madhive, Inc.",
   "filings": 13,
@@ -2076,6 +2665,7 @@
   "approval_rate": null
  },
  "mainspringenergy": {
+  "display": "Mainspring Energy",
   "tier": "strong",
   "entity": "Mainspring Energy, Inc.",
   "filings": 121,
@@ -2088,6 +2678,7 @@
   "approval_rate": null
  },
  "manulife": {
+  "display": "Manulife Investment Management Timberland and Agriculture",
   "tier": "strong",
   "entity": "Manulife Investment Management Timberland and Agriculture Inc.",
   "filings": 12,
@@ -2100,6 +2691,7 @@
   "approval_rate": null
  },
  "marmon": {
+  "display": "Marmon Foodservice Technologies",
   "tier": "strong",
   "entity": "Marmon Foodservice Technologies, Inc.",
   "filings": 10,
@@ -2112,6 +2704,7 @@
   "approval_rate": null
  },
  "masseyservices": {
+  "display": "Massey Services",
   "tier": "strong",
   "entity": "Massey Services, Inc.",
   "filings": 7,
@@ -2124,6 +2717,7 @@
   "approval_rate": null
  },
  "mastercard": {
+  "display": "Mastercard International",
   "tier": "strong",
   "entity": "Mastercard International Incorporated",
   "filings": 2507,
@@ -2136,6 +2730,7 @@
   "approval_rate": 1
  },
  "matchgroup": {
+  "display": "Match Group Americas",
   "tier": "strong",
   "entity": "Match Group Americas LLC",
   "filings": 46,
@@ -2148,6 +2743,7 @@
   "approval_rate": 1
  },
  "mckesson": {
+  "display": "McKesson",
   "tier": "strong",
   "entity": "McKesson Corporation",
   "filings": 895,
@@ -2160,6 +2756,7 @@
   "approval_rate": null
  },
  "medimpact": {
+  "display": "MedImpact Healthcare Systems",
   "tier": "strong",
   "entity": "MedImpact Healthcare Systems, Inc.",
   "filings": 167,
@@ -2172,6 +2769,7 @@
   "approval_rate": null
  },
  "medtronic": {
+  "display": "Medtronic",
   "tier": "strong",
   "entity": "Medtronic, Inc.",
   "filings": 2254,
@@ -2184,6 +2782,7 @@
   "approval_rate": null
  },
  "meijer": {
+  "display": "Meijer Great Lakes Partnership",
   "tier": "strong",
   "entity": "Meijer Great Lakes Limited Partnership",
   "filings": 275,
@@ -2196,6 +2795,7 @@
   "approval_rate": null
  },
  "mercor": {
+  "display": "Mercor.io",
   "tier": "moderate",
   "entity": "Mercor.io Corporation",
   "filings": 57,
@@ -2208,6 +2808,7 @@
   "approval_rate": null
  },
  "micron": {
+  "display": "Micron Technology",
   "tier": "strong",
   "entity": "Micron Technology, Inc.",
   "filings": 3505,
@@ -2220,6 +2821,7 @@
   "approval_rate": 0.99
  },
  "mimecast": {
+  "display": "Mimecast North America",
   "tier": "strong",
   "entity": "Mimecast North America, Inc.",
   "filings": 11,
@@ -2232,6 +2834,7 @@
   "approval_rate": null
  },
  "mirage": {
+  "display": "Mirage Software",
   "tier": "moderate",
   "entity": "Mirage Software, Inc.",
   "filings": 101,
@@ -2243,7 +2846,34 @@
   "top_titles": null,
   "approval_rate": 1
  },
+ "Mistral AI": {
+  "display": "Mistral AI",
+  "tier": "strong",
+  "entity": "Mistral AI, Inc.",
+  "filings": 67,
+  "green_cards": 0,
+  "years": "2024-2026",
+  "staffing": false,
+  "median_wage": 190000,
+  "fy26_tech_filings": 4,
+  "top_titles": "APPLIED AI ENGINEER",
+  "approval_rate": null
+ },
+ "Mollie": {
+  "display": "Mollie",
+  "tier": "weak",
+  "entity": "Mollie LLC",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2025-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "moloco": {
+  "display": "Moloco",
   "tier": "strong",
   "entity": "Moloco, Inc.",
   "filings": 204,
@@ -2256,6 +2886,7 @@
   "approval_rate": null
  },
  "moog": {
+  "display": "Moog",
   "tier": "strong",
   "entity": "Moog Inc.",
   "filings": 8,
@@ -2268,6 +2899,7 @@
   "approval_rate": null
  },
  "motorolasolutions": {
+  "display": "Motorola Solutions",
   "tier": "strong",
   "entity": "Motorola Solutions, Inc.",
   "filings": 1072,
@@ -2280,6 +2912,7 @@
   "approval_rate": null
  },
  "mufgub": {
+  "display": "MUFG Bank",
   "tier": "strong",
   "entity": "MUFG Bank, Ltd.",
   "filings": 434,
@@ -2292,6 +2925,7 @@
   "approval_rate": 0.974
  },
  "mxtechnologiesinc": {
+  "display": "MX Technologies",
   "tier": "strong",
   "entity": "MX Technologies Inc.",
   "filings": 21,
@@ -2303,7 +2937,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER 2",
   "approval_rate": null
  },
+ "N26": {
+  "display": "N26",
+  "tier": "weak",
+  "entity": "N26 INC.",
+  "filings": 14,
+  "green_cards": 0,
+  "years": "2019-2022",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "nelnet": {
+  "display": "Nelnet Business Solutions",
   "tier": "strong",
   "entity": "Nelnet Business Solutions, Inc.",
   "filings": 105,
@@ -2316,6 +2964,7 @@
   "approval_rate": null
  },
  "nerdwallet": {
+  "display": "NerdWallet",
   "tier": "strong",
   "entity": "NerdWallet, Inc.",
   "filings": 172,
@@ -2327,7 +2976,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Nike": {
+  "display": "Nike",
+  "tier": "strong",
+  "entity": "NIKE, Inc.",
+  "filings": 2163,
+  "green_cards": 765,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 167155,
+  "fy26_tech_filings": 55,
+  "top_titles": "SOFTWARE ENGINEER | SOFTWARE ENGINEER III | LEAD SOFTWARE ENGINEER",
+  "approval_rate": 0.977
+ },
  "nordsonhcm": {
+  "display": "Nordson",
   "tier": "strong",
   "entity": "Nordson Corporation",
   "filings": 23,
@@ -2340,6 +3003,7 @@
   "approval_rate": null
  },
  "normalcomputing": {
+  "display": "Normal Computing",
   "tier": "strong",
   "entity": "Normal Computing Corporation",
   "filings": 6,
@@ -2352,6 +3016,7 @@
   "approval_rate": null
  },
  "Nortal": {
+  "display": "Nortal",
   "tier": "weak",
   "entity": "Nortal, LLC",
   "filings": 2,
@@ -2364,6 +3029,7 @@
   "approval_rate": null
  },
  "northwesternmutual": {
+  "display": "Northwestern Mutual Life Insurance",
   "tier": "strong",
   "entity": "Northwestern Mutual Life Insurance Company",
   "filings": 999,
@@ -2376,6 +3042,7 @@
   "approval_rate": 1
  },
  "ntrs": {
+  "display": "The Northern Trust",
   "tier": "strong",
   "entity": "The Northern Trust Company",
   "filings": 989,
@@ -2388,6 +3055,7 @@
   "approval_rate": null
  },
  "nvidia": {
+  "display": "Nvidia",
   "tier": "strong",
   "entity": "NVIDIA Corporation",
   "filings": 8761,
@@ -2400,6 +3068,7 @@
   "approval_rate": 0.992
  },
  "oclc": {
+  "display": "Oclc",
   "tier": "strong",
   "entity": "OCLC Inc.",
   "filings": 246,
@@ -2412,6 +3081,7 @@
   "approval_rate": 0.909
  },
  "omni": {
+  "display": "Omni Hotels Management",
   "tier": "strong",
   "entity": "Omni Hotels Management Corporation",
   "filings": 8,
@@ -2424,6 +3094,7 @@
   "approval_rate": null
  },
  "omnissa": {
+  "display": "Omnissa",
   "tier": "strong",
   "entity": "Omnissa, LLC",
   "filings": 144,
@@ -2436,6 +3107,7 @@
   "approval_rate": null
  },
  "openai": {
+  "display": "OpenAI OpCo",
   "tier": "strong",
   "entity": "OpenAI OpCo, LLC",
   "filings": 456,
@@ -2448,6 +3120,7 @@
   "approval_rate": null
  },
  "opengov": {
+  "display": "OpenGov",
   "tier": "strong",
   "entity": "OpenGov, Inc.",
   "filings": 102,
@@ -2460,6 +3133,7 @@
   "approval_rate": null
  },
  "openlane": {
+  "display": "Openlane",
   "tier": "strong",
   "entity": "OPENLANE, Inc.",
   "filings": 13,
@@ -2472,6 +3146,7 @@
   "approval_rate": null
  },
  "optimum": {
+  "display": "Optimum Media",
   "tier": "strong",
   "entity": "Optimum Media, LLC",
   "filings": 93,
@@ -2484,6 +3159,7 @@
   "approval_rate": null
  },
  "oumedicine": {
+  "display": "Ou Medicine",
   "tier": "strong",
   "entity": "OU MEDICINE, INC.",
   "filings": 17,
@@ -2496,6 +3172,7 @@
   "approval_rate": null
  },
  "ovative": {
+  "display": "Ovative Group",
   "tier": "strong",
   "entity": "Ovative Group LLC",
   "filings": 15,
@@ -2508,6 +3185,7 @@
   "approval_rate": null
  },
  "Palantir": {
+  "display": "Palantir",
   "tier": "strong",
   "entity": "PALANTIR TECHNOLOGIES INC.",
   "filings": 697,
@@ -2519,7 +3197,21 @@
   "top_titles": "SOFTWARE ENGINEER | FORWARD DEPLOYED AI ENGINEER | SOFTWARE ENGINEER (11525.3338)",
   "approval_rate": null
  },
+ "Parloa": {
+  "display": "Parloa",
+  "tier": "moderate",
+  "entity": "Parloa Inc.",
+  "filings": 6,
+  "green_cards": 0,
+  "years": "2025-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "patreon": {
+  "display": "Patreon",
   "tier": "strong",
   "entity": "PATREON, INC.",
   "filings": 108,
@@ -2532,6 +3224,7 @@
   "approval_rate": 0.778
  },
  "paypal": {
+  "display": "PayPal",
   "tier": "strong",
   "entity": "PayPal, Inc.",
   "filings": 7310,
@@ -2544,6 +3237,7 @@
   "approval_rate": null
  },
  "pennmutual": {
+  "display": "Penn Mutual Life Insurance",
   "tier": "strong",
   "entity": "Penn Mutual Life Insurance Company",
   "filings": 45,
@@ -2556,6 +3250,7 @@
   "approval_rate": null
  },
  "people-data-labs": {
+  "display": "People Data Labs",
   "tier": "moderate",
   "entity": "People Data Labs, Inc.",
   "filings": 5,
@@ -2568,6 +3263,7 @@
   "approval_rate": null
  },
  "peraton": {
+  "display": "Peraton State & Local",
   "tier": "moderate",
   "entity": "Peraton State & Local Inc.",
   "filings": 13,
@@ -2580,6 +3276,7 @@
   "approval_rate": null
  },
  "Perplexity": {
+  "display": "Perplexity",
   "tier": "strong",
   "entity": "Perplexity AI, Inc.",
   "filings": 41,
@@ -2592,6 +3289,7 @@
   "approval_rate": null
  },
  "phantom": {
+  "display": "Phantom AI",
   "tier": "strong",
   "entity": "Phantom AI, Inc.",
   "filings": 30,
@@ -2604,6 +3302,7 @@
   "approval_rate": null
  },
  "philips": {
+  "display": "Philips North America",
   "tier": "strong",
   "entity": "PHILIPS NORTH AMERICA LLC",
   "filings": 363,
@@ -2615,7 +3314,34 @@
   "top_titles": "SOFTWARE DEVELOPMENT ENGINEER | CLOUD SOFTWARE DEVELOPMENT ENGINEER | DATA AND AI ENGINEER",
   "approval_rate": null
  },
+ "PhysicsX": {
+  "display": "PhysicsX",
+  "tier": "strong",
+  "entity": "PhysicsX, Inc.",
+  "filings": 9,
+  "green_cards": 0,
+  "years": "2024-2026",
+  "staffing": false,
+  "median_wage": 215000,
+  "fy26_tech_filings": 2,
+  "top_titles": "MACHINE LEARNING ENGINEER II | MACHINE LEARNING ENGINEER I",
+  "approval_rate": null
+ },
+ "Pigment": {
+  "display": "Pigment",
+  "tier": "weak",
+  "entity": "Pigment Inc.",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2023-2023",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "Pinecone": {
+  "display": "Pinecone",
   "tier": "strong",
   "entity": "Pinecone Systems, Inc.",
   "filings": 18,
@@ -2628,6 +3354,7 @@
   "approval_rate": null
  },
  "plaid": {
+  "display": "Plaid",
   "tier": "strong",
   "entity": "Plaid, Inc.",
   "filings": 299,
@@ -2639,7 +3366,21 @@
   "top_titles": "SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER | MACHINE LEARNING ENGINEER",
   "approval_rate": 1
  },
+ "PlanetScale": {
+  "display": "PlanetScale",
+  "tier": "weak",
+  "entity": "PlanetScale, Inc.",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2021-2021",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "plaud": {
+  "display": "Plaud",
   "tier": "strong",
   "entity": "Plaud Inc.",
   "filings": 26,
@@ -2652,6 +3393,7 @@
   "approval_rate": null
  },
  "playground": {
+  "display": "Playground Global",
   "tier": "moderate",
   "entity": "Playground Global, LLC",
   "filings": 6,
@@ -2663,7 +3405,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "PolyAI": {
+  "display": "PolyAI",
+  "tier": "weak",
+  "entity": "PolyAI Technologies Inc",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2024-2024",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "procore": {
+  "display": "Procore Technologies",
   "tier": "strong",
   "entity": "Procore Technologies, Inc.",
   "filings": 280,
@@ -2676,6 +3432,7 @@
   "approval_rate": 1
  },
  "promise": {
+  "display": "Promise Healthcare NFP",
   "tier": "strong",
   "entity": "Promise Healthcare NFP",
   "filings": 8,
@@ -2688,6 +3445,7 @@
   "approval_rate": null
  },
  "provectus": {
+  "display": "Provectus IT",
   "tier": "strong",
   "entity": "Provectus IT, Inc.",
   "filings": 13,
@@ -2700,6 +3458,7 @@
   "approval_rate": null
  },
  "pwc": {
+  "display": "PricewaterhouseCoopers Advisory Services",
   "tier": "strong",
   "entity": "PricewaterhouseCoopers Advisory Services LLC",
   "filings": 6872,
@@ -2712,6 +3471,7 @@
   "approval_rate": null
  },
  "quantiphi": {
+  "display": "Quantiphi",
   "tier": "strong",
   "entity": "Quantiphi, Inc.",
   "filings": 421,
@@ -2724,6 +3484,7 @@
   "approval_rate": 0.9
  },
  "queracomputinginc": {
+  "display": "QuEra Computing",
   "tier": "strong",
   "entity": "QuEra Computing Inc.",
   "filings": 26,
@@ -2736,6 +3497,7 @@
   "approval_rate": null
  },
  "quince": {
+  "display": "Quince",
   "tier": "moderate",
   "entity": "Quince & Co, LLC",
   "filings": 7,
@@ -2748,6 +3510,7 @@
   "approval_rate": null
  },
  "quora": {
+  "display": "Quora",
   "tier": "strong",
   "entity": "Quora, Inc.",
   "filings": 242,
@@ -2760,6 +3523,7 @@
   "approval_rate": 1
  },
  "r1rcm": {
+  "display": "R1 RCM Holdco",
   "tier": "strong",
   "entity": "R1 RCM Holdco Inc.",
   "filings": 67,
@@ -2772,6 +3536,7 @@
   "approval_rate": 1
  },
  "radar": {
+  "display": "Radar Labs",
   "tier": "moderate",
   "entity": "Radar Labs, Inc.",
   "filings": 10,
@@ -2784,6 +3549,7 @@
   "approval_rate": null
  },
  "ramp": {
+  "display": "Ramp Business",
   "tier": "strong",
   "entity": "Ramp Business Corporation",
   "filings": 140,
@@ -2796,6 +3562,7 @@
   "approval_rate": 1
  },
  "recordedfuture": {
+  "display": "Recorded Future",
   "tier": "strong",
   "entity": "Recorded Future, Inc.",
   "filings": 12,
@@ -2808,6 +3575,7 @@
   "approval_rate": null
  },
  "reddit": {
+  "display": "Reddit",
   "tier": "strong",
   "entity": "Reddit, Inc.",
   "filings": 496,
@@ -2820,6 +3588,7 @@
   "approval_rate": 1
  },
  "regions": {
+  "display": "Regions Bank",
   "tier": "strong",
   "entity": "Regions Bank",
   "filings": 260,
@@ -2832,6 +3601,7 @@
   "approval_rate": null
  },
  "relativity": {
+  "display": "Relativity ODA",
   "tier": "strong",
   "entity": "Relativity ODA LLC",
   "filings": 156,
@@ -2844,6 +3614,7 @@
   "approval_rate": null
  },
  "relx": {
+  "display": "Relx",
   "tier": "strong",
   "entity": "RELX Inc.",
   "filings": 1155,
@@ -2856,6 +3627,7 @@
   "approval_rate": null
  },
  "remitly": {
+  "display": "Remitly",
   "tier": "strong",
   "entity": "Remitly, Inc.",
   "filings": 320,
@@ -2868,6 +3640,7 @@
   "approval_rate": 0.818
  },
  "render": {
+  "display": "Render Services",
   "tier": "strong",
   "entity": "Render Services, Inc.",
   "filings": 9,
@@ -2880,6 +3653,7 @@
   "approval_rate": null
  },
  "republic": {
+  "display": "Republic Services",
   "tier": "strong",
   "entity": "Republic Services, Inc.",
   "filings": 129,
@@ -2891,7 +3665,34 @@
   "top_titles": "SENIOR SOFTWARE DEVELOPER | BI DEVELOPER III | ETL DEVELOPER III",
   "approval_rate": null
  },
+ "Resend": {
+  "display": "Resend",
+  "tier": "weak",
+  "entity": "RESENDIZ BROS TRUCKING INC.",
+  "filings": 0,
+  "green_cards": 0,
+  "years": "2025-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "Resolve AI": {
+  "display": "Resolve AI",
+  "tier": "strong",
+  "entity": "Resolve AI, Inc.",
+  "filings": 105,
+  "green_cards": 0,
+  "years": "2024-2026",
+  "staffing": false,
+  "median_wage": 213512,
+  "fy26_tech_filings": 42,
+  "top_titles": "SOFTWARE ENGINEER | SOFTWARE ENGINEER - AI RESEARCH",
+  "approval_rate": null
+ },
  "rhoda-ai": {
+  "display": "Rhoda AI",
   "tier": "moderate",
   "entity": "Rhoda AI Corporation",
   "filings": 8,
@@ -2903,7 +3704,21 @@
   "top_titles": "PRINCIPAL MEMBER OF TECHNICAL STAFF | SENIOR MEMBER OF THE TECHNICAL STAFF",
   "approval_rate": null
  },
+ "Robinhood": {
+  "display": "Robinhood",
+  "tier": "strong",
+  "entity": "Robinhood Markets, Inc.",
+  "filings": 1225,
+  "green_cards": 349,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 187000,
+  "fy26_tech_filings": 77,
+  "top_titles": "SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER, FINCRIMES",
+  "approval_rate": null
+ },
  "rocketlab": {
+  "display": "Rocket Lab",
   "tier": "strong",
   "entity": "Rocket Lab USA, Inc.",
   "filings": 18,
@@ -2916,6 +3731,7 @@
   "approval_rate": null
  },
  "rockwellautomation": {
+  "display": "Rockwell Automation",
   "tier": "strong",
   "entity": "Rockwell Automation, Inc.",
   "filings": 511,
@@ -2927,7 +3743,21 @@
   "top_titles": "PROJECT ENGINEER SOFTWARE | SENIOR SOFTWARE ENGINEER - KBGFJG160910-7 | SOFTWARE ENGINEER APPLICATIONS - KBGFJG135644-6",
   "approval_rate": null
  },
+ "RunPod": {
+  "display": "RunPod",
+  "tier": "moderate",
+  "entity": "Runpod, Inc.",
+  "filings": 8,
+  "green_cards": 0,
+  "years": "2023-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "ryder": {
+  "display": "Ryder System",
   "tier": "strong",
   "entity": "Ryder System, Inc.",
   "filings": 333,
@@ -2940,6 +3770,7 @@
   "approval_rate": null
  },
  "sailorhealth": {
+  "display": "Sailor Health",
   "tier": "strong",
   "entity": "Sailor Health, Inc.",
   "filings": 4,
@@ -2952,6 +3783,7 @@
   "approval_rate": null
  },
  "saintlukes": {
+  "display": "Saint Luke's Health System",
   "tier": "strong",
   "entity": "Saint Luke's Health System",
   "filings": 66,
@@ -2964,6 +3796,7 @@
   "approval_rate": null
  },
  "salesforce": {
+  "display": "Salesforce",
   "tier": "strong",
   "entity": "Salesforce, Inc.",
   "filings": 9067,
@@ -2976,6 +3809,7 @@
   "approval_rate": null
  },
  "salientmotion": {
+  "display": "Salient Motion",
   "tier": "strong",
   "entity": "Salient Motion, Inc.",
   "filings": 4,
@@ -2988,6 +3822,7 @@
   "approval_rate": null
  },
  "samsungresearchamerica": {
+  "display": "Samsung Research America",
   "tier": "strong",
   "entity": "Samsung Research America, Inc.",
   "filings": 574,
@@ -3000,6 +3835,7 @@
   "approval_rate": 1
  },
  "sanofi": {
+  "display": "Sanofi Services",
   "tier": "strong",
   "entity": "Sanofi US Services Inc.",
   "filings": 475,
@@ -3012,6 +3848,7 @@
   "approval_rate": 1
  },
  "santander": {
+  "display": "Santander Bank",
   "tier": "strong",
   "entity": "Santander Bank, N.A.",
   "filings": 413,
@@ -3024,6 +3861,7 @@
   "approval_rate": null
  },
  "sardine": {
+  "display": "SardineAI",
   "tier": "strong",
   "entity": "SardineAI Corp",
   "filings": 28,
@@ -3035,7 +3873,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Scandit": {
+  "display": "Scandit",
+  "tier": "weak",
+  "entity": "Scandit, Inc",
+  "filings": 3,
+  "green_cards": 0,
+  "years": "2020-2023",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "schonfeld": {
+  "display": "Schonfeld Strategic Advisors",
   "tier": "strong",
   "entity": "Schonfeld Strategic Advisors LLC",
   "filings": 175,
@@ -3048,6 +3900,7 @@
   "approval_rate": 1
  },
  "scribdinc": {
+  "display": "Scribd",
   "tier": "strong",
   "entity": "Scribd, Inc.",
   "filings": 62,
@@ -3060,6 +3913,7 @@
   "approval_rate": 1
  },
  "scribe": {
+  "display": "Scribe Opco",
   "tier": "strong",
   "entity": "Scribe Opco, LLC",
   "filings": 33,
@@ -3072,6 +3926,7 @@
   "approval_rate": null
  },
  "sentilink": {
+  "display": "SentiLink",
   "tier": "strong",
   "entity": "SentiLink Corp.",
   "filings": 27,
@@ -3084,6 +3939,7 @@
   "approval_rate": null
  },
  "servicetitan": {
+  "display": "ServiceTitan",
   "tier": "strong",
   "entity": "ServiceTitan, Inc.",
   "filings": 356,
@@ -3096,6 +3952,7 @@
   "approval_rate": null
  },
  "sharecare": {
+  "display": "Sharecare Operating",
   "tier": "strong",
   "entity": "Sharecare Operating Company, Inc.",
   "filings": 42,
@@ -3108,6 +3965,7 @@
   "approval_rate": null
  },
  "sharkninjaoperatingllc": {
+  "display": "SharkNinja Operating",
   "tier": "strong",
   "entity": "SharkNinja Operating LLC",
   "filings": 207,
@@ -3120,6 +3978,7 @@
   "approval_rate": null
  },
  "shepherd": {
+  "display": "Shepherd Labs",
   "tier": "strong",
   "entity": "Shepherd Labs, Inc.",
   "filings": 7,
@@ -3132,6 +3991,7 @@
   "approval_rate": null
  },
  "shieldai": {
+  "display": "Shield AI",
   "tier": "strong",
   "entity": "Shield AI, Inc.",
   "filings": 8,
@@ -3144,6 +4004,7 @@
   "approval_rate": null
  },
  "Sierra": {
+  "display": "Sierra",
   "tier": "staffing-shop",
   "entity": "Sierra Consulting Inc",
   "filings": 222,
@@ -3156,6 +4017,7 @@
   "approval_rate": null
  },
  "sift": {
+  "display": "Sift Science",
   "tier": "strong",
   "entity": "Sift Science, Inc.",
   "filings": 84,
@@ -3168,6 +4030,7 @@
   "approval_rate": null
  },
  "simplisafe": {
+  "display": "SimpliSafe",
   "tier": "strong",
   "entity": "SimpliSafe, Inc.",
   "filings": 99,
@@ -3180,6 +4043,7 @@
   "approval_rate": null
  },
  "skydio": {
+  "display": "Skydio",
   "tier": "strong",
   "entity": "Skydio, Inc.",
   "filings": 155,
@@ -3192,6 +4056,7 @@
   "approval_rate": 1
  },
  "sleepnumber": {
+  "display": "Sleep Number",
   "tier": "strong",
   "entity": "Sleep Number Corporation",
   "filings": 94,
@@ -3204,6 +4069,7 @@
   "approval_rate": null
  },
  "smithnephew": {
+  "display": "Smith & Nephew",
   "tier": "strong",
   "entity": "Smith & Nephew, Inc.",
   "filings": 418,
@@ -3216,6 +4082,7 @@
   "approval_rate": 1
  },
  "snapfinance": {
+  "display": "Snap Finance",
   "tier": "strong",
   "entity": "Snap Finance, LLC.",
   "filings": 91,
@@ -3228,6 +4095,7 @@
   "approval_rate": null
  },
  "snorkelai": {
+  "display": "Snorkel AI",
   "tier": "strong",
   "entity": "Snorkel AI, Inc.",
   "filings": 80,
@@ -3240,6 +4108,7 @@
   "approval_rate": null
  },
  "snowflake": {
+  "display": "Snowflake",
   "tier": "strong",
   "entity": "Snowflake Inc.",
   "filings": 1870,
@@ -3252,6 +4121,7 @@
   "approval_rate": 0.996
  },
  "sofarocean": {
+  "display": "Sofar Ocean Technologies",
   "tier": "strong",
   "entity": "Sofar Ocean Technologies, Inc.",
   "filings": 8,
@@ -3263,7 +4133,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "SoFi": {
+  "display": "SoFi",
+  "tier": "strong",
+  "entity": "SoFi Bank N.A.",
+  "filings": 18,
+  "green_cards": 0,
+  "years": "2024-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "sonatus": {
+  "display": "Sonatus",
   "tier": "strong",
   "entity": "Sonatus, Inc.",
   "filings": 67,
@@ -3276,6 +4160,7 @@
   "approval_rate": null
  },
  "speak": {
+  "display": "Speak Up Africa",
   "tier": "strong",
   "entity": "Speak Up Africa, Inc.",
   "filings": 3,
@@ -3287,7 +4172,34 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Spotify": {
+  "display": "Spotify",
+  "tier": "strong",
+  "entity": "SPOTIFY USA, INC.",
+  "filings": 1186,
+  "green_cards": 236,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 233000,
+  "fy26_tech_filings": 20,
+  "top_titles": "SENIOR MACHINE LEARNING ENGINEER | MACHINE LEARNING ENGINEER II | SENIOR BACKEND ENGINEER",
+  "approval_rate": null
+ },
+ "Stability AI": {
+  "display": "Stability AI",
+  "tier": "weak",
+  "entity": "STABILITY AI US SERVICES CORP.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2023-2023",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "stackav": {
+  "display": "Stack AV",
   "tier": "strong",
   "entity": "Stack AV Co",
   "filings": 51,
@@ -3300,6 +4212,7 @@
   "approval_rate": null
  },
  "steadily": {
+  "display": "Steadily Insurance Agency",
   "tier": "strong",
   "entity": "Steadily Insurance Agency",
   "filings": 4,
@@ -3312,6 +4225,7 @@
   "approval_rate": null
  },
  "stout": {
+  "display": "Stout Risius Ross",
   "tier": "strong",
   "entity": "Stout Risius Ross, LLC",
   "filings": 95,
@@ -3323,7 +4237,21 @@
   "top_titles": "ASSOCIATE, SOFTWARE DEVELOPER",
   "approval_rate": null
  },
+ "SumUp": {
+  "display": "SumUp",
+  "tier": "moderate",
+  "entity": "SumUp Inc.",
+  "filings": 7,
+  "green_cards": 0,
+  "years": "2021-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "sunlife": {
+  "display": "Sunlife Medical Staffing",
   "tier": "strong",
   "entity": "Sunlife Medical Staffing, LLC",
   "filings": 0,
@@ -3336,6 +4264,7 @@
   "approval_rate": null
  },
  "suno": {
+  "display": "Suno",
   "tier": "moderate",
   "entity": "Suno, Inc.",
   "filings": 9,
@@ -3347,7 +4276,34 @@
   "top_titles": "SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Supabase": {
+  "display": "Supabase",
+  "tier": "weak",
+  "entity": "Supabase, Inc.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2021-2022",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
+ "Synthesia": {
+  "display": "Synthesia",
+  "tier": "weak",
+  "entity": "Synthesia, Inc.",
+  "filings": 2,
+  "green_cards": 0,
+  "years": "2024-2024",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "Temporal": {
+  "display": "Temporal",
   "tier": "strong",
   "entity": "Temporal Technologies, Inc.",
   "filings": 54,
@@ -3360,6 +4316,7 @@
   "approval_rate": null
  },
  "tempus": {
+  "display": "Tempus AI",
   "tier": "strong",
   "entity": "Tempus AI",
   "filings": 422,
@@ -3372,6 +4329,7 @@
   "approval_rate": 0.963
  },
  "tessera-labs": {
+  "display": "Tessera Labs",
   "tier": "moderate",
   "entity": "Tessera Labs Corporation",
   "filings": 16,
@@ -3384,6 +4342,7 @@
   "approval_rate": null
  },
  "thermofisher": {
+  "display": "Thermo Fisher Scientific",
   "tier": "strong",
   "entity": "Thermo Fisher Scientific Inc.",
   "filings": 1536,
@@ -3396,6 +4355,7 @@
   "approval_rate": null
  },
  "thomsonreuters": {
+  "display": "Thomson Reuters",
   "tier": "strong",
   "entity": "Thomson Reuters Holdings Inc.",
   "filings": 174,
@@ -3408,6 +4368,7 @@
   "approval_rate": 0.933
  },
  "tmobile": {
+  "display": "T-Mobile",
   "tier": "strong",
   "entity": "T-Mobile USA, Inc.",
   "filings": 3636,
@@ -3420,6 +4381,7 @@
   "approval_rate": null
  },
  "toppanmerrill": {
+  "display": "Toppan Merrill",
   "tier": "strong",
   "entity": "TOPPAN MERRILL LLC",
   "filings": 3,
@@ -3432,6 +4394,7 @@
   "approval_rate": null
  },
  "toshibaglobalcommercesolutions": {
+  "display": "Toshiba Global Commerce Solutions",
   "tier": "strong",
   "entity": "Toshiba Global Commerce Solutions, Inc.",
   "filings": 199,
@@ -3444,6 +4407,7 @@
   "approval_rate": null
  },
  "towerloan": {
+  "display": "Tower Loan of Mississippi",
   "tier": "strong",
   "entity": "Tower Loan of Mississippi LLC",
   "filings": 7,
@@ -3456,6 +4420,7 @@
   "approval_rate": null
  },
  "toyota": {
+  "display": "Toyota Material Handling",
   "tier": "strong",
   "entity": "Toyota Material Handling Inc.",
   "filings": 162,
@@ -3468,6 +4433,7 @@
   "approval_rate": null
  },
  "traba": {
+  "display": "Traba",
   "tier": "strong",
   "entity": "Traba Inc.",
   "filings": 34,
@@ -3480,6 +4446,7 @@
   "approval_rate": null
  },
  "trace3": {
+  "display": "Trace3",
   "tier": "moderate",
   "entity": "Trace3 LLC",
   "filings": 22,
@@ -3492,6 +4459,7 @@
   "approval_rate": null
  },
  "transmedics": {
+  "display": "TransMedics",
   "tier": "strong",
   "entity": "TransMedics, Inc.",
   "filings": 17,
@@ -3504,6 +4472,7 @@
   "approval_rate": null
  },
  "transunion": {
+  "display": "TransUnion",
   "tier": "strong",
   "entity": "TransUnion, LLC",
   "filings": 1131,
@@ -3516,6 +4485,7 @@
   "approval_rate": null
  },
  "travelers": {
+  "display": "The Travelers Indemnity",
   "tier": "strong",
   "entity": "The Travelers Indemnity Company",
   "filings": 333,
@@ -3528,6 +4498,7 @@
   "approval_rate": null
  },
  "troweprice": {
+  "display": "T. Rowe Price Associates",
   "tier": "strong",
   "entity": "T. Rowe Price Associates, Inc.",
   "filings": 491,
@@ -3539,7 +4510,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER | LEAD SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Truist": {
+  "display": "Truist",
+  "tier": "strong",
+  "entity": "Truist Bank",
+  "filings": 1945,
+  "green_cards": 385,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 132245,
+  "fy26_tech_filings": 111,
+  "top_titles": "SOFTWARE ENGINEER III | SOFTWARE ENGINEER II | SOFTWARE ENGINEER IV",
+  "approval_rate": 0.984
+ },
  "tsys": {
+  "display": "TSYS Acquiring Solutions",
   "tier": "strong",
   "entity": "TSYS Acquiring Solutions LLC",
   "filings": 43,
@@ -3552,6 +4537,7 @@
   "approval_rate": null
  },
  "turing": {
+  "display": "Turing Enterprises",
   "tier": "strong",
   "entity": "Turing Enterprises Inc.",
   "filings": 87,
@@ -3564,6 +4550,7 @@
   "approval_rate": null
  },
  "twitch": {
+  "display": "Twitch Interactive",
   "tier": "strong",
   "entity": "Twitch Interactive, Inc.",
   "filings": 655,
@@ -3576,6 +4563,7 @@
   "approval_rate": null
  },
  "tysonfoods": {
+  "display": "Tyson Foods",
   "tier": "strong",
   "entity": "Tyson Foods Inc.",
   "filings": 176,
@@ -3588,6 +4576,7 @@
   "approval_rate": null
  },
  "uline": {
+  "display": "Uline",
   "tier": "strong",
   "entity": "ULINE, Inc.",
   "filings": 239,
@@ -3600,6 +4589,7 @@
   "approval_rate": 1
  },
  "ulse": {
+  "display": "Ulse",
   "tier": "strong",
   "entity": "ULSE Inc.",
   "filings": 5,
@@ -3611,7 +4601,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "USAA": {
+  "display": "USAA",
+  "tier": "strong",
+  "entity": "USAA Federal Savings Bank",
+  "filings": 220,
+  "green_cards": 77,
+  "years": "2021-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "usbank": {
+  "display": "U.S. Bank National Association",
   "tier": "strong",
   "entity": "U.S. Bank National Association",
   "filings": 4131,
@@ -3624,6 +4628,7 @@
   "approval_rate": 0.995
  },
  "valeo": {
+  "display": "Valeo North America",
   "tier": "strong",
   "entity": "Valeo North America, Inc.",
   "filings": 384,
@@ -3636,6 +4641,7 @@
   "approval_rate": null
  },
  "valorepartners": {
+  "display": "Valore Partners",
   "tier": "strong",
   "entity": "Valore Partners, LLC",
   "filings": 3,
@@ -3648,6 +4654,7 @@
   "approval_rate": null
  },
  "vanguard": {
+  "display": "The Vanguard Group",
   "tier": "strong",
   "entity": "The Vanguard Group, Inc.",
   "filings": 1534,
@@ -3660,6 +4667,7 @@
   "approval_rate": 1
  },
  "vanta": {
+  "display": "Vanta",
   "tier": "strong",
   "entity": "Vanta Inc.",
   "filings": 70,
@@ -3671,7 +4679,21 @@
   "top_titles": "SENIOR SOFTWARE ENGINEER | SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "Vapi": {
+  "display": "Vapi",
+  "tier": "moderate",
+  "entity": "Vapi Inc.",
+  "filings": 20,
+  "green_cards": 0,
+  "years": "2024-2026",
+  "staffing": false,
+  "median_wage": 187574,
+  "fy26_tech_filings": 8,
+  "top_titles": "MEMBER OF TECHNICAL STAFF, FORWARD DEPLOYED | MEMBER OF TECHNICAL STAFF | SENIOR STAFF MACHINE LEARNING ENGINEER",
+  "approval_rate": null
+ },
  "vast": {
+  "display": "Vast Data",
   "tier": "strong",
   "entity": "Vast Data, Inc.",
   "filings": 16,
@@ -3683,7 +4705,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Veeva Systems": {
+  "display": "Veeva Systems",
+  "tier": "strong",
+  "entity": "Veeva Systems Inc.",
+  "filings": 444,
+  "green_cards": 61,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 140000,
+  "fy26_tech_filings": 39,
+  "top_titles": "SOFTWARE ENGINEER | ASSOCIATE SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "verabradley": {
+  "display": "Vera Bradley Designs",
   "tier": "strong",
   "entity": "Vera Bradley Designs, Inc.",
   "filings": 10,
@@ -3695,7 +4731,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "Vercel": {
+  "display": "Vercel",
+  "tier": "strong",
+  "entity": "Vercel, Inc.",
+  "filings": 34,
+  "green_cards": 2,
+  "years": "2021-2026",
+  "staffing": false,
+  "median_wage": 245000,
+  "fy26_tech_filings": 6,
+  "top_titles": "SOFTWARE ENGINEER | FULL STACK ENGINEER",
+  "approval_rate": null
+ },
  "verdantas": {
+  "display": "Verdantas",
   "tier": "strong",
   "entity": "Verdantas LLC",
   "filings": 12,
@@ -3708,6 +4758,7 @@
   "approval_rate": null
  },
  "verizon": {
+  "display": "Verizon Data Services",
   "tier": "moderate",
   "entity": "Verizon Data Services LLC",
   "filings": 1881,
@@ -3720,6 +4771,7 @@
   "approval_rate": null
  },
  "verkada": {
+  "display": "Verkada",
   "tier": "strong",
   "entity": "Verkada, Inc",
   "filings": 381,
@@ -3732,6 +4784,7 @@
   "approval_rate": 0.982
  },
  "vianttechnology": {
+  "display": "Viant Technology",
   "tier": "strong",
   "entity": "Viant Technology LLC",
   "filings": 85,
@@ -3743,7 +4796,21 @@
   "top_titles": "SR. SOFTWARE ENGINEER | SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
   "approval_rate": 1
  },
+ "Visa": {
+  "display": "Visa",
+  "tier": "strong",
+  "entity": "Visa Technology & Operations LLC",
+  "filings": 3730,
+  "green_cards": 1022,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 163550,
+  "fy26_tech_filings": 52,
+  "top_titles": "SOFTWARE ENGINEER - SR. CONSULTANT LEVEL | SR. ML ENGINEER | SENIOR SOFTWARE ENGINEER",
+  "approval_rate": 0.996
+ },
  "vishay": {
+  "display": "Vishay Siliconix",
   "tier": "strong",
   "entity": "VISHAY SILICONIX",
   "filings": 7,
@@ -3756,6 +4823,7 @@
   "approval_rate": null
  },
  "vividseatsllc": {
+  "display": "Vivid Seats",
   "tier": "strong",
   "entity": "Vivid Seats LLC",
   "filings": 19,
@@ -3768,6 +4836,7 @@
   "approval_rate": null
  },
  "vizient": {
+  "display": "Vizient",
   "tier": "strong",
   "entity": "Vizient, Inc.",
   "filings": 279,
@@ -3780,6 +4849,7 @@
   "approval_rate": null
  },
  "warnerbros": {
+  "display": "Warner Bros. Entertainment",
   "tier": "strong",
   "entity": "Warner Bros. Entertainment Inc.",
   "filings": 54,
@@ -3792,6 +4862,7 @@
   "approval_rate": null
  },
  "Wayve": {
+  "display": "Wayve",
   "tier": "strong",
   "entity": "Wayve Technologies, Inc",
   "filings": 78,
@@ -3804,6 +4875,7 @@
   "approval_rate": null
  },
  "weave": {
+  "display": "Weave Communications",
   "tier": "strong",
   "entity": "Weave Communications Inc.",
   "filings": 25,
@@ -3816,6 +4888,7 @@
   "approval_rate": null
  },
  "weee": {
+  "display": "Weee!",
   "tier": "strong",
   "entity": "Weee! Inc.",
   "filings": 245,
@@ -3828,6 +4901,7 @@
   "approval_rate": 1
  },
  "wellington": {
+  "display": "Wellington Management",
   "tier": "strong",
   "entity": "Wellington Management Company LLP",
   "filings": 502,
@@ -3840,6 +4914,7 @@
   "approval_rate": null
  },
  "wellsky": {
+  "display": "WellSky",
   "tier": "strong",
   "entity": "WellSky Corporation",
   "filings": 66,
@@ -3851,7 +4926,21 @@
   "top_titles": "STAFF SOFTWARE ENGINEER | SR. SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "WeRide": {
+  "display": "WeRide",
+  "tier": "strong",
+  "entity": "WeRide Corp.",
+  "filings": 207,
+  "green_cards": 64,
+  "years": "2020-2026",
+  "staffing": false,
+  "median_wage": 155925,
+  "fy26_tech_filings": 28,
+  "top_titles": "SOFTWARE ENGINEER | SENIOR SOFTWARE ENGINEER | STAFF SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "westernunion": {
+  "display": "Western Union",
   "tier": "strong",
   "entity": "Western Union, LLC",
   "filings": 651,
@@ -3864,6 +4953,7 @@
   "approval_rate": null
  },
  "wexinc": {
+  "display": "Wex",
   "tier": "strong",
   "entity": "WEX Inc.",
   "filings": 114,
@@ -3876,6 +4966,7 @@
   "approval_rate": 1
  },
  "wisconsin": {
+  "display": "Wisconsin Dental Group S.C",
   "tier": "strong",
   "entity": "Wisconsin Dental Group S.C.",
   "filings": 12,
@@ -3888,6 +4979,7 @@
   "approval_rate": null
  },
  "wonder": {
+  "display": "Wonder Group",
   "tier": "strong",
   "entity": "Wonder Group, Inc.",
   "filings": 62,
@@ -3900,6 +4992,7 @@
   "approval_rate": null
  },
  "workday": {
+  "display": "Workday",
   "tier": "strong",
   "entity": "Workday, Inc.",
   "filings": 2293,
@@ -3912,6 +5005,7 @@
   "approval_rate": null
  },
  "workiva": {
+  "display": "Workiva",
   "tier": "strong",
   "entity": "Workiva Inc.",
   "filings": 20,
@@ -3923,7 +5017,21 @@
   "top_titles": null,
   "approval_rate": null
  },
+ "WorkOS": {
+  "display": "WorkOS",
+  "tier": "moderate",
+  "entity": "WorkOS, Inc.",
+  "filings": 10,
+  "green_cards": 0,
+  "years": "2019-2026",
+  "staffing": false,
+  "median_wage": 213512,
+  "fy26_tech_filings": 1,
+  "top_titles": "SOFTWARE ENGINEER",
+  "approval_rate": null
+ },
  "wynd": {
+  "display": "Wynd Technologies",
   "tier": "strong",
   "entity": "Wynd Technologies Inc.",
   "filings": 6,
@@ -3935,7 +5043,21 @@
   "top_titles": "BACKEND SOFTWARE ENGINEER",
   "approval_rate": null
  },
+ "xAI": {
+  "display": "xAI",
+  "tier": "weak",
+  "entity": "XAI, Inc.",
+  "filings": 1,
+  "green_cards": 0,
+  "years": "2025-2025",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "yext": {
+  "display": "Yext",
   "tier": "strong",
   "entity": "Yext, Inc.",
   "filings": 129,
@@ -3948,6 +5070,7 @@
   "approval_rate": null
  },
  "yougov": {
+  "display": "YouGov America",
   "tier": "strong",
   "entity": "YouGov America, Inc.",
   "filings": 6,
@@ -3960,6 +5083,7 @@
   "approval_rate": null
  },
  "zayo": {
+  "display": "Zayo Group",
   "tier": "strong",
   "entity": "Zayo Group, LLC",
   "filings": 43,
@@ -3972,6 +5096,7 @@
   "approval_rate": null
  },
  "zillow": {
+  "display": "Zillow",
   "tier": "strong",
   "entity": "Zillow, Inc.",
   "filings": 1389,
@@ -3983,7 +5108,21 @@
   "top_titles": "SENIOR SOFTWARE DEVELOPMENT ENGINEER | MACHINE LEARNING ENGINEER | SOFTWARE DEVELOPMENT ENGINEER",
   "approval_rate": 1
  },
+ "Zip": {
+  "display": "Zip",
+  "tier": "strong",
+  "entity": "ZIP CO US INC.",
+  "filings": 89,
+  "green_cards": 3,
+  "years": "2020-2026",
+  "staffing": false,
+  "median_wage": null,
+  "fy26_tech_filings": null,
+  "top_titles": null,
+  "approval_rate": null
+ },
  "zoll": {
+  "display": "Zoll Medical",
   "tier": "strong",
   "entity": "Zoll Medical Corporation",
   "filings": 49,
@@ -3996,6 +5135,7 @@
   "approval_rate": null
  },
  "zoox": {
+  "display": "Zoox",
   "tier": "strong",
   "entity": "Zoox Inc.",
   "filings": 1668,
@@ -4008,6 +5148,7 @@
   "approval_rate": null
  },
  "zscaler": {
+  "display": "Zscaler",
   "tier": "strong",
   "entity": "Zscaler, Inc.",
   "filings": 934,
